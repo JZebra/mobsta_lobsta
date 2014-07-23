@@ -3,17 +3,19 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.integer :poster_id, null: false
       t.integer :lobster_id
+      t.string :title
+      t.text :description
       t.string :category, null: false
-      t.varchar(10) :zipcode
+      t.string :zipcode, limit: 10
       t.date :date, null: false
       t.integer :timeframe, null: false
       t.string :address
-      t.text :description
-      
+  
       t.timestamps
     end
     add_index :tasks, :poster_id
     add_index :tasks, :lobster_id
+    add_index :tasks, :title
     add_index :tasks, :category
     add_index :tasks, :zipcode
     add_index :tasks, :date
