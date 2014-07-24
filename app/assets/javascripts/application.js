@@ -12,10 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require underscore
 //= require backbone
-//= require bootstrap
+//= require bootstrap-sprockets
+//= require mobstalobsta
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections

@@ -1,5 +1,5 @@
 ML.Views.UserIndex = Backbone.View.extend({
-  temaplate: JST['users/show']
+  template: JST['users/show'],
   
   
   initialize: function () {

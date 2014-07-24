@@ -13,19 +13,15 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
       <% if signed_in? %>
-        <li id='add-dropdown' class='dropdown'>
-          <button class='dropdown-toggle navbar-btn btn btn-primary'            data-toggle='dropdown'><span class='glyphicon glyphicon-plus'></span>
-          </button>
-        </li>
         <li>
-          <%= button_to "Sign out", session_url, method: :delete, class: "btn btn-primary navbar-btn" %>
+          <%= button_to "Sign out", api_session_url, method: :delete, class: "btn btn-primary navbar-btn" %>
         </li>
       <% else %>
         <li>
-          <button class="btn btn-success navbar-btn"            data-toggle="modal" target="signup_modal">Sign up</button>
+          <button class="btn btn-success navbar-btn" data-toggle="modal" data-target="#signup_modal">Sign up</button>
         </li>
         <li>
-          <button class="btn btn-primary navbar-btn"             data-toggle="modal" target="login_modal">Log in</button>
+          <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#login_modal">Log in</button>
         </li>
       <% end %>
       </ul>
@@ -58,7 +54,7 @@
           <label>Zip Code<br>
             <input name="user[zipcode]" type="text"><br>
           </label><br>
-          <button type="button" class="btn btn-default" id="new_user_signup">
+          <button type="button" class="btn btn-primary" id="new_user_signup">
             Create account
           </button>
         </form>      
@@ -86,7 +82,7 @@
           <label>Password<br>
             <input name="user[password]" type="password"><br>
           </label><br>
-          <button type="button" class="btn btn-default" id="user_login">
+          <button type="button" class="btn btn-primary" id="user_login">
             Log in
           </button>
         </form>      
