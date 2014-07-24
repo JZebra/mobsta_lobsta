@@ -5,7 +5,7 @@ window.ML = {
   Routers: {},
   Utils: {},
   initialize: function() {
-    new ML.Routers.Router
+    new ML.Routers.Router;
     Backbone.history.start();
   }
 };
