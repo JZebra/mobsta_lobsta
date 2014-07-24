@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
   def new
   end
   
@@ -7,15 +7,14 @@ class SessionsController < ApplicationController
     
     if @user 
       sign_in!(@user)
-      redirect_to root_url
+      render json: @user
     else
-      flash.now[:errors] = ["Invalid email or password"]
-      render :new
+      render json: ["Invalid email or password"], status: :unprocessable_entity
     end
   end
   
   def destroy
     sign_out!
-    redirect_to new_session_url
+    render json: {}
   end  
 end

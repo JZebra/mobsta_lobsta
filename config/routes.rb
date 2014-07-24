@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  root to: "users#new"
-  resources :users
-  resources :tasks
-  resource :session
+  root to: "pages#root"
   
-  resources :transactions, only: [:create, :destroy]
+  namespace :api, defaults: { format: :json } do
+    resources :tasks
+    resources :users
+    resource :session
+    resources :transactions, only: [:create, :destroy]    
+  end
+  
+ 
   
 end
-
