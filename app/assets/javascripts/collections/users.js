@@ -1,6 +1,6 @@
 ML.Collections.Users = Backbone.Collection.extend({
   model: ML.Models.User,
-  url: 'api/users',
+  url: '/users',
   
   getOrFetch: function (id) {
     var user = this.get(id);

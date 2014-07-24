@@ -4,13 +4,21 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   },
   
   routes: {
-    ''          : 'rootShow',
+    ''          : 'dashboardShow',
     'tasks'     : 'lobsterShow'
   },
   
-  lobsterShow: function () {
-    var showView = ML.views.
+  dashboardShow: function () {
+    ML.Collections.users.fetch();
+    var dashboard = new ML.Views.Dashboard({ 
+      collection: ML.Collections.users
+    });
+    this._swapView(dashboard)
   },
+  
+  // lobsterShow: function () {
+    // var showView = ML.views.
+  // },
   
   _swapView: function (view) {
     if (this.currentView) {
