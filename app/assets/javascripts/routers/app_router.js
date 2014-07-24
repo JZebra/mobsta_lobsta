@@ -5,11 +5,11 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   
   routes: {
     ''          : 'rootShow',
-    'tasks'     : 'taskerShow'
+    'tasks'     : 'lobsterShow'
   },
   
-  taskerShow: function () {
-    
+  lobsterShow: function () {
+    var showView = ML.views.
   },
   
   _swapView: function (view) {

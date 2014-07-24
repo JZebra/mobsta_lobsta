@@ -11,10 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724180905) do
+ActiveRecord::Schema.define(version: 20140724212906) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "categories", ["title"], name: "index_categories_on_title", using: :btree
 
   create_table "deals", force: true do |t|
     t.integer  "task_id",             null: false
@@ -43,21 +51,33 @@ ActiveRecord::Schema.define(version: 20140724180905) do
   add_index "reviews", ["score"], name: "index_reviews_on_score", using: :btree
   add_index "reviews", ["task_date"], name: "index_reviews_on_task_date", using: :btree
 
+  create_table "skills", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "cat_id",     null: false
+    t.integer  "rate",       null: false
+    t.string   "pitch",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "skills", ["cat_id"], name: "index_skills_on_cat_id", using: :btree
+  add_index "skills", ["rate"], name: "index_skills_on_rate", using: :btree
+  add_index "skills", ["user_id"], name: "index_skills_on_user_id", using: :btree
+
   create_table "tasks", force: true do |t|
     t.integer  "poster_id",              null: false
     t.integer  "lobster_id"
     t.string   "title"
     t.text     "description"
-    t.string   "category",               null: false
     t.string   "zipcode",     limit: 10
     t.date     "date",                   null: false
     t.integer  "timeframe",              null: false
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cat_id"
   end
 
-  add_index "tasks", ["category"], name: "index_tasks_on_category", using: :btree
   add_index "tasks", ["date"], name: "index_tasks_on_date", using: :btree
   add_index "tasks", ["lobster_id"], name: "index_tasks_on_lobster_id", using: :btree
   add_index "tasks", ["poster_id"], name: "index_tasks_on_poster_id", using: :btree

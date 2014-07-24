@@ -7,13 +7,13 @@
 #  lobster_id  :integer
 #  title       :string(255)
 #  description :text
-#  category    :string(255)      not null
 #  zipcode     :string(10)
 #  date        :date             not null
 #  timeframe   :integer          not null
 #  address     :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
+#  cat_id      :integer
 #
 
 class Task < ActiveRecord::Base

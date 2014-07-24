@@ -25,8 +25,10 @@ class User < ActiveRecord::Base
   has_many(:authored_reviews, class_name: "Review", foreign_key: :author_id)
   has_many(:received_reviews, class_name: "Review", foreign_key: :lobster_id)
   
-  has_many :sent_transactions, through: :posted_tasks, source: :transaction
-  has_many :received_transactions, through: :accepted_tasks, source: :transaction
+  has_many :sent_deals, through: :posted_tasks, source: :deal
+  has_many :received_deals, through: :accepted_tasks, source: :deal
+  has_many :skills
+  has_many :categories, through: :skills, source: :category
   
   attr_reader :password
   after_initialize :ensure_token
