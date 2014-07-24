@@ -11,10 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140723204509) do
+ActiveRecord::Schema.define(version: 20140724180905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "deals", force: true do |t|
+    t.integer  "task_id",             null: false
+    t.datetime "completion_datetime", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "deals", ["completion_datetime"], name: "index_deals_on_completion_datetime", using: :btree
+  add_index "deals", ["task_id"], name: "index_deals_on_task_id", using: :btree
+
+  create_table "reviews", force: true do |t|
+    t.string   "category",   null: false
+    t.string   "body",       null: false
+    t.integer  "author_id",  null: false
+    t.integer  "lobster_id", null: false
+    t.date     "task_date"
+    t.integer  "score",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["author_id"], name: "index_reviews_on_author_id", using: :btree
+  add_index "reviews", ["category"], name: "index_reviews_on_category", using: :btree
+  add_index "reviews", ["lobster_id"], name: "index_reviews_on_lobster_id", using: :btree
+  add_index "reviews", ["score"], name: "index_reviews_on_score", using: :btree
+  add_index "reviews", ["task_date"], name: "index_reviews_on_task_date", using: :btree
 
   create_table "tasks", force: true do |t|
     t.integer  "poster_id",              null: false
@@ -37,16 +64,6 @@ ActiveRecord::Schema.define(version: 20140723204509) do
   add_index "tasks", ["timeframe"], name: "index_tasks_on_timeframe", using: :btree
   add_index "tasks", ["title"], name: "index_tasks_on_title", using: :btree
   add_index "tasks", ["zipcode"], name: "index_tasks_on_zipcode", using: :btree
-
-  create_table "transactions", force: true do |t|
-    t.integer  "task_id",             null: false
-    t.datetime "completion_datetime", null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "transactions", ["completion_datetime"], name: "index_transactions_on_completion_datetime", using: :btree
-  add_index "transactions", ["task_id"], name: "index_transactions_on_task_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name",                       null: false

@@ -1,18 +1,29 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)      not null
+#  email           :string(255)      not null
+#  phone1          :string(15)       not null
+#  phone2          :string(15)
+#  zipcode         :string(10)
+#  password_digest :string(255)      not null
+#  token           :string(255)      not null
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 class User < ActiveRecord::Base
   validates :name, :email, :phone1, :token, :password_digest, presence: true
   validates :email, uniqueness: true, format: { with: /\A\S+@.+\.\S+\z/ }
   
-  has_many(
-  :posted_tasks,
-  class_name: "Task",
-  foreign_key: :poster_id
-  )
+  has_many(:posted_tasks, class_name: "Task", foreign_key: :poster_id)
   
-  has_many(
-  :accepted_tasks,
-  class_name: "Task",
-  foreign_key: :lobster_id
-  )
+  has_many(:accepted_tasks, class_name: "Task", foreign_key: :lobster_id)
+  
+  has_many(:authored_reviews, class_name: "Review", foreign_key: :author_id)
+  has_many(:received_reviews, class_name: "Review", foreign_key: :lobster_id)
   
   has_many :sent_transactions, through: :posted_tasks, source: :transaction
   has_many :received_transactions, through: :accepted_tasks, source: :transaction

@@ -1,3 +1,2 @@
-module Api::ApiController < ApplicationController
-  
+class ApiController < ApplicationController
 end
