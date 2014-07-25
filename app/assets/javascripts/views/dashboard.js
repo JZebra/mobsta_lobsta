@@ -9,7 +9,7 @@ ML.Views.Dashboard = Backbone.CompositeView.extend({
     var that = this;
     this.collection.each(function (user) {
       var userView = new ML.Views.UserShow({ model: user })
-      that.addSubview(that.$el, userView)
+      that.addSubview(".lobsters", userView)
     })
   },
   

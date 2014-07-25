@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724212906) do
+ActiveRecord::Schema.define(version: 20140725065911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20140724212906) do
   add_index "deals", ["task_id"], name: "index_deals_on_task_id", using: :btree
 
   create_table "reviews", force: true do |t|
-    t.string   "category",   null: false
     t.string   "body",       null: false
     t.integer  "author_id",  null: false
     t.integer  "lobster_id", null: false
@@ -43,10 +42,11 @@ ActiveRecord::Schema.define(version: 20140724212906) do
     t.integer  "score",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "cat_id"
   end
 
   add_index "reviews", ["author_id"], name: "index_reviews_on_author_id", using: :btree
-  add_index "reviews", ["category"], name: "index_reviews_on_category", using: :btree
+  add_index "reviews", ["cat_id"], name: "index_reviews_on_cat_id", using: :btree
   add_index "reviews", ["lobster_id"], name: "index_reviews_on_lobster_id", using: :btree
   add_index "reviews", ["score"], name: "index_reviews_on_score", using: :btree
   add_index "reviews", ["task_date"], name: "index_reviews_on_task_date", using: :btree
@@ -86,15 +86,19 @@ ActiveRecord::Schema.define(version: 20140724212906) do
   add_index "tasks", ["zipcode"], name: "index_tasks_on_zipcode", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "name",                       null: false
-    t.string   "email",                      null: false
-    t.string   "phone1",          limit: 15, null: false
-    t.string   "phone2",          limit: 15
-    t.string   "zipcode",         limit: 10
-    t.string   "password_digest",            null: false
-    t.string   "token",                      null: false
+    t.string   "name",                          null: false
+    t.string   "email",                         null: false
+    t.string   "phone1",             limit: 15, null: false
+    t.string   "phone2",             limit: 15
+    t.string   "zipcode",            limit: 10
+    t.string   "password_digest",               null: false
+    t.string   "token",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

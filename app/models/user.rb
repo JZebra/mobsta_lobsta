@@ -2,16 +2,20 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  name            :string(255)      not null
-#  email           :string(255)      not null
-#  phone1          :string(15)       not null
-#  phone2          :string(15)
-#  zipcode         :string(10)
-#  password_digest :string(255)      not null
-#  token           :string(255)      not null
-#  created_at      :datetime
-#  updated_at      :datetime
+#  id                 :integer          not null, primary key
+#  name               :string(255)      not null
+#  email              :string(255)      not null
+#  phone1             :string(15)       not null
+#  phone2             :string(15)
+#  zipcode            :string(10)
+#  password_digest    :string(255)      not null
+#  token              :string(255)      not null
+#  created_at         :datetime
+#  updated_at         :datetime
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
@@ -29,6 +33,14 @@ class User < ActiveRecord::Base
   has_many :received_deals, through: :accepted_tasks, source: :deal
   has_many :skills
   has_many :categories, through: :skills, source: :category
+  
+  has_attached_file :image, styles: { medium: "200x200", small: "108x108" }, default: "/images/no_image.png"
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_file_name :avatar, :matches => [/png\Z/, /jpe?g\Z/]
+  
+  def average_score
+    received_reviews.average(:score)
+  end
   
   attr_reader :password
   after_initialize :ensure_token

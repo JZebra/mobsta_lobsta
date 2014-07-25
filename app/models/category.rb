@@ -12,6 +12,8 @@ class Category < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true
   
   has_many :tasks
+  has_many(:reviews, foreign_key: :cat_id)
   has_many(:skills, foreign_key: :cat_id)
   has_many :users, through: :skills, source: :user
+
 end
