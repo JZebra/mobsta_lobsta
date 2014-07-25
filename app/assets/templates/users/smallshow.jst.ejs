@@ -1,7 +1,13 @@
-<div class="image"></div>
+<div class="image">
+  <img src="assets/no_image.png" class="img-circle" >
+</div>
 <h2><%= user.escape("name") %></h2>
 <div class="rating">
-  <%= user.escape %>
+  <h3><%= user.escape("average_score") %>% positive</h3>
+    <p><%= user.escape("total_reviews") %> total reviews </p>
 </div>
 <div class="hourly_rate"></div>
+<h4>$<%= user.escape("rate") %>/hour</h4>
+<br>
+<h3><%= user.escape("skill") %></h3>
 <div class="elite_new"></div>

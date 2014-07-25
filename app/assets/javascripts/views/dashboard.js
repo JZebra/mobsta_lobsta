@@ -2,21 +2,27 @@ ML.Views.Dashboard = Backbone.CompositeView.extend({
   template: JST['dashboard'],
   
   initialize: function () {
+    this.renderUsers();
     this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'add', this.addUser)
   },
   
   renderUsers: function () {
     var that = this;
     this.collection.each(function (user) {
-      var userView = new ML.Views.UserShow({ model: user })
-      that.addSubview(".lobsters", userView)
+      that.addUser(user)
     })
+  },
+  
+  addUser: function (user) {
+    var userView = new ML.Views.UserShow({ model: user })
+    this.addSubview(".lobsters", userView)
   },
   
   render: function () {
     var content = this.template({ users: this.collection });
     this.$el.html(content);
-    this.renderUsers();
+    this.attachSubviews();
     return this;
   }
   

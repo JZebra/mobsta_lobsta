@@ -10,6 +10,7 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   
   dashboardShow: function () {
     ML.Collections.users.fetch();
+
     var dashboard = new ML.Views.Dashboard({ 
       collection: ML.Collections.users
     });
