@@ -22,7 +22,7 @@ ML.Views.Dashboard = Backbone.CompositeView.extend({
     event.preventDefault();
     var user = ML.Collections.users.getOrFetch(event.currentTarget.id);
     var panelView = new ML.Views.UserPanel({ model: user });
-    
+    this.addSubview(".lobsters", panelView)
   },
   
   addUser: function (user) {
