@@ -1,13 +1,25 @@
-<div class="image">
-  <img src="assets/no_image.png" class="img-circle" >
+<div class="lobster_smallshow col-lg-3" id="<%= user.escape('id')%>" >
+  <!-- <a href="#user" ><span class="lobster_span"></span></a> -->
+  <div class="status">
+    <div class="row">
+      <div class="col-2 col-lg-12">
+        <div class="image-container">
+          <img src="assets/no_image.png" class="img-circle img-sm">
+        </div>
+        <div class="lobster_details col-10 col-lg-12">
+          <h2 class="name"><%= user.escape("name") %></h2>
+          <div class="secondary_details score col-12 col-lg-6">
+            <div class="rating">
+              <h3><%= user.escape("average_score") %>% Positive Rating</h3>
+                <p><%= user.escape("total_reviews") %> reviews </p>
+            </div>
+          </div>
+          <div class="secondary_details rate col-12 col-lg-6">
+            <h3>$<%= user.escape("rate") %>/hour</h3>
+            <p><%= user.escape("skill") %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<h2><%= user.escape("name") %></h2>
-<div class="rating">
-  <h3><%= user.escape("average_score") %>% positive</h3>
-    <p><%= user.escape("total_reviews") %> total reviews </p>
-</div>
-<div class="hourly_rate"></div>
-<h4>$<%= user.escape("rate") %>/hour</h4>
-<br>
-<h3><%= user.escape("skill") %></h3>
-<div class="elite_new"></div>

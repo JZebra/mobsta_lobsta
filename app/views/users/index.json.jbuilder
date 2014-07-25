@@ -12,9 +12,11 @@ json.array! @users do |user|
   if user.sample_skills[0]
     json.rate user.sample_skills[0].rate
     json.skill user.sample_skills[0].category.title
+    json.pitch user.sample_skills[0].pitch
   else
     json.rate 0
-    json.skill "no skills available"
+    json.skill "Being useless"
+    json.pitch "This is not the lobster you're looking for..."
   end
 end
 

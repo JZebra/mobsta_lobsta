@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   has_many :skills
   has_many :categories, through: :skills, source: :category
   
-  has_attached_file :image, styles: { medium: "200x200", small: "108x108" }, default_url: "no_image.png"
+  has_attached_file :image, styles: { medium: "225x225", small: "144x144" }, default_url: "no_image.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates_attachment_file_name :image, :matches => [/png\Z/, /jpe?g\Z/]
   
