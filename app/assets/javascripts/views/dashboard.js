@@ -2,6 +2,7 @@ ML.Views.Dashboard = Backbone.CompositeView.extend({
   template: JST['dashboard'],
   
   initialize: function () {
+    this.renderFilter();
     this.renderUsers();
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addUser)
@@ -23,6 +24,11 @@ ML.Views.Dashboard = Backbone.CompositeView.extend({
     var user = ML.Collections.users.getOrFetch(event.currentTarget.id);
     var panelView = new ML.Views.UserPanel({ model: user });
     this.addSubview(".lobsters", panelView)
+  },
+  
+  renderFilter: function () {
+    var filterView = new ML.Views.FilterForm();
+    this.addSubview("#filter_form", filterView);
   },
   
   addUser: function (user) {
