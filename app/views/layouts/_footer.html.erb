@@ -4,15 +4,15 @@
       <div class="container">
         <span class="social text">Follow us! We don't bite:</span>
         <a class="social-link" href="#">
-          <img class="social" alt="Facebook" src="/assets/icons/facebook-icon.png">
+          <%= image_tag("/assets/icons/facebook-icon.png", alt: "Facebook", class: "social") %>
         </a>
          | 
         <a class="social-link" href="#">
-          <img class="social" alt="Twitter" src="/assets/icons/twitter-bird.png">
+          <%= image_tag("/assets/icons/twitter-bird.png", alt: "Twitter", class: "social") %>
         </a>
          |
         <a class="social-link" href="#">
-          <img class="social" alt="Linkedin" src="/assets/icons/linkedin-icon.jpg">
+          <%= image_tag("/assets/icons/linkedin-icon.jpg", alt: "Linkedin", class: "social") %>
         </a>
       </div>
     </div>
@@ -45,10 +45,10 @@
             <div class="footer-title">Download our app</div>
             <p class="apps-message">Maintain your business while shoveling your mountains of cash in the Cayman Islands with our mobile app.</p>
             <a class="appstore-badge" href="#" target="_blank">
-            <img alt="Download on the App Store" height="45" src="assets/icons/appstore_badge.svg">
+            <%= image_tag("/assets/icons/appstore_badge.svg", alt: "Download on the App Store", height: '45') %>  
             </a>
             <a class="appstore-badge" href="#" target="_blank">
-            <img alt="Get it on Google Play" height="45" src="assets/icons/google_play_badge.svg">
+            <%= image_tag("/assets/icons/google_play_badge.svg", alt: "Get on Google Play", height: '45') %>
             </a>
             <div class="apps-image"></div>
           </div>
