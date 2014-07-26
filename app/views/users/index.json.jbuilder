@@ -1,7 +1,8 @@
 json.array! @users do |user|
 
   json.extract! user, :id, :name, :zipcode
-  json.image_sm_url user.image.url
+  json.image_sm_url user.image.url(:small)
+  json.image_md_url user.image.url(:medium)
 
   json.average_score user.average_score
 
@@ -9,6 +10,8 @@ json.array! @users do |user|
   json.total_reviews user.total_reviews
   json.skills user.sample_skills
   
+  
+  #Replace this once skills filtering is functional
   if user.sample_skills[0]
     json.rate user.sample_skills[0].rate
     json.skill user.sample_skills[0].category.title

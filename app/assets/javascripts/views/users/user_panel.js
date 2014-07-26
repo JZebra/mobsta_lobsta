@@ -1,4 +1,6 @@
 ML.Views.UserPanel = Backbone.View.extend({
+  className: "lobster_panel row",
+  
   template: JST['users/panel'],
   
   initialize: function () {
