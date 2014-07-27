@@ -40,7 +40,7 @@ Rails.application.configure do
     :url =>':s3_domain_url',                                      
     :path => "images/:class/:id.:style.:extension",
     :s3_credentials => {                                          
-      :bucket => ENV['AWS_BUCKET'],           
+      :bucket => ENV['AWS_BUCKET_DEVELOPMENT'],           
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],                 
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']          
     }                                                             
