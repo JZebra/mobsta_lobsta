@@ -5,4 +5,7 @@ class PagesController < ApplicationController
   
   def splash
   end
+  
+  def details
+  end
 end
