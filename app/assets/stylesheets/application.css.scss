@@ -17,6 +17,14 @@
 @import "bootstrap";
 @import "font-awesome";
 
+$burgundy: #59121A;
+$green: #0C3A2D;
+$white: #FFFFFF;
+$black: #010101;
+$gray: #181B22;
+$lightblue: #1978A5;
+$scarlet: #A51122;
+
 .img-circle 
 {
   height: 108px;
@@ -28,6 +36,19 @@ img.social
   height: 24px;
   width: 24px;
 }
+
+ul
+{
+list-style-type: none;
+}
+
+.btn-default
+{
+  color: $burgundy;
+  border-color: $burgundy;
+}
+
+
 //
 //.lobster_span
 //{

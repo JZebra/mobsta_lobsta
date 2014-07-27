@@ -1,5 +1,5 @@
-ML.Views.UserShow = Backbone.View.extend({
-  template: JST['users/smallshow'],
+ML.Views.UserCard = Backbone.View.extend({
+  template: JST['users/card'],
   
   initialize: function () {
     // this.collection = this.model.lists();

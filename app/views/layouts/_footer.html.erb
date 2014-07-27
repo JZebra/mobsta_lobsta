@@ -6,54 +6,52 @@
         <a class="social-link" href="#">
           <%= image_tag("/assets/icons/facebook-icon.png", alt: "Facebook", class: "social") %>
         </a>
-         | 
+        | 
         <a class="social-link" href="#">
           <%= image_tag("/assets/icons/twitter-bird.png", alt: "Twitter", class: "social") %>
         </a>
-         |
+        |
         <a class="social-link" href="#">
           <%= image_tag("/assets/icons/linkedin-icon.jpg", alt: "Linkedin", class: "social") %>
         </a>
       </div>
     </div>
     <div class="row footer-row">
-      <div class="container footer-content">
-        <div class="footer-column">
+      <div class="container footer-content col-12">
+        <div class="footer-column col-lg-4">
           <span class="footer-title">Discover</span>
-          <div class="links">
-            <a href="#">How MobstrLobstr Works</a>
-            <a href="#">Become a Lobster</a>
-            <a href="#">The Godlike</a>
-            <a href="#">Trust</a>
-            <a href="#">Help</a>
-          </div>
+          <ul class="links">
+            <li><a href="#">How MobstrLobstr Works</a></li>
+            <li><a href="#">Become a Lobster</a></li>
+            <li><a href="#">The Godlike</a></li>
+            <li><a href="#">Trust</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
         </div>
-        <div class="footer-column">
+        <div class="footer-column col-lg-4">
           <span class="footer-title">Company</span>
-          <div class="links">
-            <a href="#">About Us</a>
-            <a href="#" target="_blank">Careers</a>
-            <a href="#">Press</a>
-            <a href="#" target="_blank">Blog</a>
-            <a class="inline-links" href="#">Terms</a>
-            <span class="amp">&amp;</span>
-            <a class="inline-links" href="#">Privacy</a>
+          <ul class="links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#" target="_blank">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#" target="_blank">Blog</a></li>
+            <li><a class="inline-links" href="#">Terms &amp; Privacy</a></li>
+            </ul>
           </div>
-        </div>
-        <div class="footer-column">
-          <div class="mobile-apps">
-            <div class="footer-title">Download our app</div>
-            <p class="apps-message">Maintain your business while shoveling your mountains of cash in the Cayman Islands with our mobile app.</p>
-            <a class="appstore-badge" href="#" target="_blank">
-            <%= image_tag("/assets/icons/appstore_badge.svg", alt: "Download on the App Store", height: '45') %>  
-            </a>
-            <a class="appstore-badge" href="#" target="_blank">
-            <%= image_tag("/assets/icons/google_play_badge.svg", alt: "Get on Google Play", height: '45') %>
-            </a>
-            <div class="apps-image"></div>
+          <div class="footer-column col-lg-4">
+            <div class="mobile-apps">
+              <div class="footer-title">Download our app</div>
+              <p class="apps-message">Maintain your business while shoveling your mountains of cash in the Cayman Islands with our mobile app.</p>
+              <a class="appstore-badge" href="#" target="_blank">
+                <%= image_tag("/assets/icons/appstore_badge.svg", alt: "Download on the App Store", height: '45') %>  
+              </a>
+              <a class="appstore-badge" href="#" target="_blank">
+                <%= image_tag("/assets/icons/google_play_badge.svg", alt: "Get on Google Play", height: '45') %>
+              </a>
+              <div class="apps-image"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
-</div>
+    </footer>
+  </div>

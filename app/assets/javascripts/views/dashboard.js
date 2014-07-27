@@ -9,7 +9,7 @@ ML.Views.Dashboard = Backbone.CompositeView.extend({
   },
   
   events: {
-    "click .lobster_smallshow" : "renderPanel"
+    "click .lobster_card" : "renderPanel"
   },
   
   renderUsers: function () {
