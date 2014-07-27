@@ -2,46 +2,31 @@ ML.Views.Dashboard = Backbone.CompositeView.extend({
   template: JST['dashboard'],
   
   initialize: function () {
-    this.renderFilter();
-    this.renderUsers();
+    // this.renderCards();
     this.listenTo(this.collection, 'sync', this.render);
-    this.listenTo(this.collection, 'add', this.addUser)
+    // this.listenTo(this.collection, 'add', this.addCard);
   },
   
-  events: {
-    "click .lobster_card" : "renderPanel"
-  },
-  
-  renderUsers: function () {
+  renderCards: function () {
     var that = this;
-    this.collection.each(function (user) {
-      that.addUser(user)
+    var recommended = this.collection.sample(3)
+    var i = 0
+    _(recommended).each(function (user) {
+      that.addCard(user, i);
+      i++;
     })
   },
   
-  renderPanel: function (event) {
-    event.preventDefault();
-    var user = ML.Collections.users.getOrFetch(event.currentTarget.id);
-    var panelView = new ML.Views.UserPanel({ model: user });
-    this.addSubview(".lobsters", panelView)
-  },
-  
-  renderFilter: function () {
-    var filterView = new ML.Views.FilterForm();
-    this.addSubview("#filter_form", filterView);
-  },
-  
-  addUser: function (user) {
-    var userView = new ML.Views.UserShow({ model: user })
-    this.addSubview(".lobsters", userView)
+  addCard: function (user, counter) {
+    var cardView = new ML.Views.DashCard({ model: user })
+    this.addSubview(".position-" + counter, cardView)
   },
   
   render: function () {
     var content = this.template({ users: this.collection });
     this.$el.html(content);
+    this.renderCards();
     this.attachSubviews();
     return this;
   }
-  
-  
 });

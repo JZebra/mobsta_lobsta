@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
+//= require backbone_trigger_logger
 //= require bootstrap-sprockets
 //= require mobstrlobstr
 //= require_tree ../templates
