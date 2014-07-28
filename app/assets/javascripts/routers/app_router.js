@@ -5,7 +5,8 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   
   routes: {
     ''          : 'dashboardShow',
-    'index'     : 'indexShow'
+    'index'     : 'indexShow',
+    'map'       : 'mapShow'
   },
   
   dashboardShow: function () {
@@ -18,12 +19,17 @@ ML.Routers.AppRouter = Backbone.Router.extend({
     // var showView = ML.views.
   // },
   
-  indexShow: function() {
+  indexShow: function () {
     //I think the collection should already be fetched....
     // ML.Collections.users.fetch(); 
     
     var index = new ML.Views.Index({ collection: ML.Collections.users });
     this._swapView(index);
+  },
+  
+  mapShow: function () {
+    var map = new ML.Views.Map({});
+    this._swapView(map);
   },
   
   _swapView: function (view) {
