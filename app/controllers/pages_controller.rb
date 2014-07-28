@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   end
   
   def details
+    @user = current_user
   end
 end
