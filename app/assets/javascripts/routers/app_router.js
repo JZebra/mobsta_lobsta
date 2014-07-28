@@ -6,7 +6,8 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     ''          : 'dashboardShow',
     'index'     : 'indexShow',
-    'map'       : 'mapShow'
+    'map'       : 'mapShow',
+    'photo'     : 'photoShow'
   },
   
   dashboardShow: function () {
@@ -30,6 +31,11 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   mapShow: function () {
     var map = new ML.Views.Map({});
     this._swapView(map);
+  },
+  
+  photoShow: function () {
+    var photo = new ML.Views.Photo({});
+    this._swapView(photo);
   },
   
   _swapView: function (view) {

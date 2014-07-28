@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140725065911) do
+ActiveRecord::Schema.define(version: 20140728183715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "availabilities", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "availabilities", ["user_id"], name: "index_availabilities_on_user_id", using: :btree
+
+  create_table "availability_markers", force: true do |t|
+    t.integer  "availability_id", null: false
+    t.float    "lat",             null: false
+    t.float    "lng",             null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "availability_markers", ["availability_id"], name: "index_availability_markers_on_availability_id", using: :btree
 
   create_table "categories", force: true do |t|
     t.string   "title"

@@ -34,6 +34,8 @@ class User < ActiveRecord::Base
   has_many :skills
   has_many :categories, through: :skills, source: :category
   
+  has_one :availability
+  
   has_attached_file :image, styles: { 
       medium: "225x225", 
       small: "144x144" }, 

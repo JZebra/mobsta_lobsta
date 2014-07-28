@@ -26,26 +26,48 @@ $gray: #181B22;
 $lightblue: #1978A5;
 $scarlet: #A51122;
 
-.img-circle 
-{
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Montserrat', sans-serif;
+}
+
+p, li{
+  font-family: 'PT Sans', sans-serif;
+}
+
+.icon{
+  height: 30px;
+}
+
+.img-circle {
   height: 108px;
   width: 108px;
   border: 2px solid $burgundy;
 }
 
-img.social
-{
+img.social{
   height: 24px;
   width: 24px;
 }
 
-ul.no-bullets
-{
+ul.no-bullets{
 list-style-type: none;
 }
 
-.btn-default
-{
+.btn-default{
   color: $burgundy;
   border-color: $burgundy;
+}
+
+.map {
+  height: 600px;
+  margin: 15px;
+}
+
+#map-container{
+  margin: 10px;
+  padding: 5px;
+}
+
+.footer-container{
+  margin-top: 30px;
 }

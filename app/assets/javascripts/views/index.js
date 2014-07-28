@@ -40,12 +40,15 @@ ML.Views.Index = Backbone.CompositeView.extend({
   
   addCard: function (user) {
     var cardView = new ML.Views.UserCard({ model: user })
-    this.addSubview(".lobsters", cardView)
+    this.addSubview(".lobster-card-container", cardView)
   },
   
   render: function () {
     var content = this.template({ users: this.collection });
     this.$el.html(content);
+    this.renderTopThree();
+    debugger;
+    //placeholder for now. Eventually need to populate the divs individually
     this.attachSubviews();
     return this;
   }
