@@ -1,0 +1,8 @@
+<ul class="categories-list">
+  <%= categories.each(function (category) { %>
+    <li>
+      <h3><%= category.title %></h3>
+      <p><%= category.description %></p>
+    </li>
+    <% }); %>
+</ul>
