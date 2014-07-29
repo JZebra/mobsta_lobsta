@@ -1,0 +1,20 @@
+<div class="edit-category">
+  <input class="category-select" name="category-select" type="checkbox" value="">
+  <div class="category-details">
+    <div class="category-title"><%= category.escape('title') %></div>
+    <div class="category-price">
+      <% debugger; %>
+      <%= skill.get('rate') %>
+    </div>
+    <div class="description-input">
+      <div class="description">
+        <%= skill.get('pitch') %>
+      </div>
+    </div>
+    <div class="category-expand" cid="12" style="display: block;">
+      <div class="category-actions">
+        <button class="btn btn-secondary btn-edit">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

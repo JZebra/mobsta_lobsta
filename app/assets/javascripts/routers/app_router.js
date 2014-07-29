@@ -42,10 +42,10 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   profileShow: function (id) {
     var currentUser = ML.Collections.users.getOrFetch(ML.currentUserID);
     ML.Collections.categories.fetch();
-    
     var profile = new ML.Views.Profile({ 
       model: currentUser, 
-      collection: ML.Collections.categories });
+      collection: ML.Collections.categories
+    });
     this._swapView(profile);
   },
   

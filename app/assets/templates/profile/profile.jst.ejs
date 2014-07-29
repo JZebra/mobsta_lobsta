@@ -23,40 +23,11 @@
       <p>Clients will only be able to hire you have if you have an hourly rate and pitch for each category that you want to work.</p>
       <div class="column-labels-bar">
         <div class="column-label skill-select-label">Select Skills</div>
-        <div class="column-label rate-label">Hourly</div>
+        <div class="column-label rate-label pull-right">Hourly</div>
       </div>
-      <div class="categories-list">
-        <% if (this.model) { %>
-          <% var that = this; %>
-          <% this.collection.each( function (category) {%>
-                          <% debugger %>
-        <div class="edit-category">
-          <input class="category-select" name="category-select" type="checkbox" value="">
-          <div class="category-details">
-            <div class="category-title"><%= category.escape('title') %></div>
-            <div class="category-price">
-              <%= that.model.escape('email') %>
-              
-            </div>
-            <div class="description-input">
-              <div class="description">
-                
-              </div>
-            </div>
-            <div class="category-expand" cid="12" style="display: block;">
-              <div class="category-actions">
-                <button class="btn btn-secondary btn-edit">Edit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <% }); %> 
-        <% }; %>
-      </div>
+      <div class="categories-list"></div>
     </div>
-    <div class="tab-pane" id="availability">
-  
-    </div>
+    <div class="tab-pane" id="availability"></div>
     <div class="tab-pane" id="photo"></div>
     <div class="tab-pane" id="about"></div>
   </div>
