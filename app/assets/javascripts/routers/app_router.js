@@ -4,10 +4,12 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   },
   
   routes: {
-    ''          : 'dashboardShow',
-    'index'     : 'indexShow',
-    'map'       : 'mapShow',
-    'photo'     : 'photoShow'
+    ''              : 'dashboardShow',
+    'index'         : 'indexShow',
+    // 'map'        : 'mapShow',
+    'photo'         : 'photoShow',
+    'lobsters/:job' : 'indexShow',
+    'profile'       : 'profileShow'
   },
   
   dashboardShow: function () {
@@ -22,14 +24,27 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   
   indexShow: function () {
     //I think the collection should already be fetched....
-    // ML.Collections.users.fetch(); 
+    // ML.Collections.users.fetch();
     
     var index = new ML.Views.Index({ collection: ML.Collections.users });
     this._swapView(index);
   },
   
-  mapShow: function () {
-    var map = new ML.Views.Map({});
+  filterShow: function (job) {
+    // should look for users where user.categories.includes(job)
+    var lobsters = ML.Collections.users.where({ categories: job })
+    
+    var filtered = new ML.Views.Index({ collection: lobsters });
+    this._swapView(filtered);
+  },
+  
+  profileShow: function () {
+    
+  },
+  
+  mapShow: function (id) { 
+    var availability = new ML.Models.Availability({ user_id: ML.currentUserID })
+    var map = new ML.Views.Map({ model: availability });
     this._swapView(map);
   },
   

@@ -6,9 +6,7 @@ ML.Views.Map = Backbone.View.extend({
   },
   
   submit: function () {
-    
     // make set of marker objects
-    
     var makeMarkerCollection = function(availability, response, status) {
       // takes same arguments as success function
       var posArr = this.path.getArray();
@@ -18,23 +16,26 @@ ML.Views.Map = Backbone.View.extend({
           lng: pos.lng(),
           availability_id: availability.id
         });
+
         marker.save({}, {
           success: function(markerModel, response, status) {
             availability.markers().add(markerModel);
+          },
+          error: function() {
+            console.log("Failed to save Marker")
           }
-        })
-        
+        })      
       });
-      
     }
-    
+    // success makes collection of markers and associates to availability
     var availability = new ML.Models.Availability()
     availability.save({}, {
       success: makeMarkerCollection.bind(this),
       error: function() {
-        debugger
+        console.log("Failed to save availability")
       }
     })
+
   },
   
   initialize: function () {

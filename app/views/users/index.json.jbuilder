@@ -9,7 +9,9 @@ json.array! @users do |user|
   json.review user.sample_review
   json.total_reviews user.total_reviews
   json.skills user.sample_skills
+  json.categories user.categories
   
+  json.availability user.availability
   
   #Replace this once skills filtering is functional
   if user.sample_skills[0]

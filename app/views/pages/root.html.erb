@@ -1,4 +1,7 @@
 <div class="backdrop">
   <div id="main"></div>
 </div>
-<script>$(ML.initialize);</script>
+<script>
+ML.currentUserID = <%= current_user.id %>;
+$(ML.initialize);</script>
+

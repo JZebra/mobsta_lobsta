@@ -6,7 +6,7 @@ ML.Views.Dashboard = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'sync', this.render);
     // this.listenTo(this.collection, 'add', this.addCard);
   },
-  
+
   renderCards: function () {
     var that = this;
     var recommended = this.collection.sample(3)

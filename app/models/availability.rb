@@ -9,6 +9,6 @@
 #
 
 class Availability < ActiveRecord::Base
-  has_many :availability_markers
+  has_many :availability_markers, dependent: :destroy
   belongs_to :user
 end

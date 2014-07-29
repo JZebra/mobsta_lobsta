@@ -45,7 +45,11 @@ class User < ActiveRecord::Base
   
   
   def average_score
-    ((received_reviews.average(:score) / 5) * 100).round
+    if !received_reviews
+      ((received_reviews.average(:score) / 5) * 100).round
+    else
+      "No tasks yet"
+    end
   end
   
   def total_reviews
