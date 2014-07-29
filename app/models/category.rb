@@ -2,10 +2,11 @@
 #
 # Table name: categories
 #
-#  id         :integer          not null, primary key
-#  title      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#  description :string(255)
 #
 
 class Category < ActiveRecord::Base

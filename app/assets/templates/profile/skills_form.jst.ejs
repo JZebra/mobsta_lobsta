@@ -1,49 +1,38 @@
-<h2>Set your hourly rates</h2>
-<button type="button" 
-  class="btn btn-default" 
-  data-container="body" 
-  data-toggle="popover" 
-  data-placement="top" 
-  data-content="Clients will only be able to hire you have if you have an hourly rate and pitch for each category that you want to work.">
-  <span class="glyphicon glyphicon-info-sign"></span>
-</button>
-<div class="column-labels-bar">
-  <form class="form">
-    <div class="column-label skill-select-label">Select Skills</div>
-    <div class="form-group skill-select dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-        Skill
-        <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-        <% categories.each( function (category) { %>
-        <li role="presentation">
-          <a role="menuitem" 
-            tabindex="-1" 
-            href="#<%= category %>">
-            <%= category %>
-          </a>
-        </li>
-        <% }) %>
-    </ul>
+<h3>Set your hourly rates</h3>
+<!--make this a popover at some point.. -->
+<p>Clients will only be able to hire you have if you have an hourly rate and pitch for each category that you want to work.</p>
+<div class="form-container row">
+  <form class="form" id="skill-form">
+    <div class="column-label skill-select-label col-lg-2">
+      <select 
+        form="skill-form"
+        class="form-control"
+        name="cat_id">
+      <% categories.each( function (category) { %>
+        <option 
+          value="<%= category.escape("id") %>">
+          <%= category.escape('title') %>
+      </option>
+      <% }) %>
+    </select>
   </div>
-  <div class="form-group column-label pitch-label">
-    <textarea 
-    class="form-control" 
-    rows='3'
-    id="skill-pitch"
-    placeholder="Why are you the one for the job? Please enter a short pitch.">
+  <div class="form-group column-label pitch-label col-lg-4">
+    <textarea
+      type="text" 
+      class="form-control" 
+      rows='2'
+      name="pitch"
+      placeholder="why doesn't this work?">Why are you the one for the job? Please enter a short pitch.
   </textarea>
-  </div>
-  <div class="form-group column-label rate-label pull-right">
-    Hourly
-  <span>
-    $
-    <input type="number" class="form-control" placeholder="rate">
-    per hour
-  </span>
-  </div>
-  <button class="btn btn-success">Submit</button>
-  </form>
 </div>
-
+<div class="form-group column-label rate-label col-lg-2">
+    <input 
+      type="number" 
+      class="form-control" 
+      name="rate"
+      placeholder="$">
+    per hour
+</div>
+<input type="submit" class="btn btn-success" name="some_name" value="Submit">
+</form>
+</div>

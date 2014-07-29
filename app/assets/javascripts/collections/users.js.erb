@@ -21,3 +21,4 @@ ML.Collections.Users = Backbone.Collection.extend({
 });
 
 ML.Collections.users = new ML.Collections.Users();
+ML.Collections.users.set(<%= User.all.to_json(:except => [:password_digest]).html_safe %>);

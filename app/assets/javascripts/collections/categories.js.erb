@@ -4,3 +4,4 @@ ML.Collections.Categories = Backbone.Collection.extend({
 });
 
 ML.Collections.categories = new ML.Collections.Categories();
+ML.Collections.categories.set(<%=Category.all.to_json%>)

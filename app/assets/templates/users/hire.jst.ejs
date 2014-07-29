@@ -1,0 +1,247 @@
+<div class="container">
+  <form class="top-aligned" novalidate="" _lpchecked="1">
+    <div class="row">
+      <div class="col-12 col-lg-3 lobster-info-container">
+        <div class="lobster-avatar">
+          <div class="avatar-container avatar-container-180 shadow">
+            <img class="lobster-md" src="<%= lobster.get('image_md_url') %>">
+          </div>
+        </div>
+        <h1 class="lobster-name"><%= lobster.escape('name') %></h1>
+        <div class="lobster-stats-container">
+
+            <div class="lobster-rating">
+              <h2><%= lobster.get('average_score') %></h2>
+              <p>Positive Rating</p>
+              <div class="lobster-total"><%= lobster.get('total_reviews') %></div>
+            </div>
+
+            <div class="lobster-price">
+              <h2>Skill.rate</h2>
+              <p>Category.title</p>
+            </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 form-container">
+        <fieldset>
+          <div class="row">
+            <div class="title-show toggle-area hidden">
+              <p class="area-title">
+                <span class="task-title">Category.title</span>
+                <i class="ss-icon ss-write toggle-trigger" data-hide=".title-show" data-show=".title-edit"></i>
+              </p>
+            </div>
+            <div class="title-edit toggle-area">
+              <div class="input-container col-12">
+                <i class="ss-dropdown ss-icon toggle-trigger" data-hide=".title-edit" data-show=".title-show"></i>
+                <label class="text-label" for="title">Title</label>
+                <input class="edit-input" data-update=".task-title" id="title" name="title" type="text" value="Home/office organization" style="cursor: auto;">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="schedule-container fields-container"><div cid="47"><fieldset>
+          <div class="schedule-show toggle-area hidden">
+            <p class="area-title">
+              <i class="ss-icon ss-write toggle-trigger" data-hide=".schedule-show" data-show=".schedule-edit"></i>
+              <span class="schedule-date"></span>
+              <br>
+              <span class="schedule-time"></span>
+            </p>
+          </div>
+          <div class="schedule-edit toggle-area">
+            <i class="ss-dropdown ss-icon toggle-trigger" data-hide=".schedule-edit" data-show=".schedule-show"></i>
+            <p class="area-title blue margin-bottom">
+              <span>Pick a date and time</span>
+            </p>
+<!--Continue editing here... -->
+            
+            <div class="time-slot-container input-container" style="opacity: 1;">
+              <div class="radio-button">
+              <label class="time-label disabled" for="time_morning">
+                <input class="time-slot-input" data-end-at="1406746800" data-start-at="1406732400" id="time_morning" name="time" type="radio" value="Morning (8am - 12pm)" disabled="">
+                <span class="time-slot">
+                  Morning
+                  <span>(8am - 12pm)</span>
+                </span>
+              </label>
+            </div>
+            <div class="radio-button">
+              <label class="time-label disabled" for="time_afternoon">
+                <input class="time-slot-input" data-end-at="1406761200" data-start-at="1406746800" id="time_afternoon" name="time" type="radio" value="Afternoon (12pm - 4pm)" disabled="">
+                <span class="time-slot">
+                  Afternoon
+                  <span>(12pm - 4pm)</span>
+                </span>
+              </label>
+            </div>
+            <div class="radio-button">
+              <label class="time-label" for="time_evening">
+                <input class="time-slot-input" data-end-at="1406775600" data-start-at="1406761200" id="time_evening" name="time" type="radio" value="Evening (4pm - 8pm)">
+                <span class="time-slot">
+                  Evening
+                  <span>(4pm - 8pm)</span>
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div></div>
+    <fieldset>
+      <div class="row">
+
+        <div class="location-show toggle-area hidden">
+          <p class="area-title">
+            <i class="ss-icon ss-write toggle-trigger" data-hide=".location-show" data-show=".location-edit"></i>
+            <span class="location-title">94103</span>
+          </p>
+        </div>
+        <div class="location-edit toggle-area">
+          <i class="ss-dropdown ss-icon toggle-trigger" data-hide=".location-edit" data-show=".location-show"></i>
+          <p class="area-title blue margin-bottom">
+            <span>Location</span>
+          </p>
+          <div class="input-container col-8">
+            <label class="text-label" for="street">Street Address</label>
+            <input class="location-input" id="street" name="street" type="text">
+          </div>
+          <div class="input-container col-4">
+            <label class="text-label" for="postal-code">Zip Code</label>
+            <input class="location-input" id="postal-code" name="postal-code" pattern="[0-9]*" type="text" value="94103">
+          </div>
+        </div>
+
+      </div>
+    </fieldset>
+    <fieldset class="toggle-area">
+      <div class="row">
+        <p class="area-title blue">Description</p>
+        <div class="input-container col-12">
+          <label class="text-label" for="description"></label>
+          <textarea class="input" id="description" rows="8"></textarea>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div class="row">
+        <div class="phone-show toggle-area ">
+          <p class="area-title">
+            <i class="ss-icon ss-write toggle-trigger" data-hide=".phone-show" data-show=".phone-edit"></i>
+            <i class="ss-phone"></i>
+            <span class="phone-phone">4077199795</span>
+          </p>
+        </div>
+        <div class="phone-edit toggle-area hidden">
+          <i class="ss-dropdown ss-icon toggle-trigger" data-hide=".phone-edit" data-show=".phone-show"></i>
+          <p class="area-title blue margin-bottom">
+            <span>Add a cell phone number</span>
+          </p>
+          <p>We need your phone number so the lobster can get in touch with you.</p>
+          <div class="input-container col-12">
+            <label class="text-label" for="phone">Phone number</label>
+            <i class="ss-phone input-icon ss-icon"></i>
+            <input class="edit-input with-icon" data-update=".phone-phone" id="phone" name="phone" pattern="[0-9]*" type="text" value="4077199795">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <div class="billing-info-container"><div cid="46"><fieldset>
+      <div class="billing-show toggle-area ">
+        <p class="area-title">
+          <i class="ss-icon ss-write toggle-trigger" data-hide=".billing-show" data-show=".billing-edit"></i>
+          <i class="ss-creditcard"></i>
+          <span class="billing-title">xxxx-xxxx-xxxx-9915</span>
+        </p>
+      </div>
+      <div class="billing-edit toggle-area hidden">
+        <i class="ss-dropdown ss-icon toggle-trigger" data-hide=".billing-edit" data-show=".billing-show"></i>
+        <p class="area-title blue margin-bottom">
+
+          <span>Edit your payment method</span>
+
+        </p>
+        <div class="row">
+          <div class="input-container col-12">
+            <label class="text-label" for="card-number">Credit Card Number</label>
+            <i class="ss-creditcard input-icon"></i>
+            <input class="input with-icon" id="card-number" name="card_number" pattern="[0-9]*" type="text" value="">
+          </div>
+          <div class="input-container col-6 col-md-3 col-lg-3">
+            <label class="text-label" for="expiration-month">Exp. Date</label>
+            <input class="input" id="expiration-month" name="expiration_month" pattern="[0-9]*" placeholder="MM" type="text" value="">
+          </div>
+          <div class="input-container no-label exp-year col-6 col-md-3 col-lg-3">
+            <input class="input" id="expiration-year" name="expiration_year" pattern="[0-9]*" placeholder="YYYY" type="text" value="">
+          </div>
+          <div class="input-container cvv col-12 col-md-6 col-lg-6">
+            <label class="text-label" for="cvv">CVV</label>
+            <input class="input" id="cvv" name="cvv" pattern="[0-9]*" type="text" value="">
+          </div>
+          <input class="input" id="publishable_key" name="publishable_key" type="hidden" value="pk_live_Gilb8v14x0IbUIPF32HVZxEk">
+        </div>
+      </div>
+    </fieldset>
+  </div></div>
+  <div class="row">
+    <div class="input-container col-12 sm-hide md-hide">
+      <button class="btn btn-primary btn-post second-btn-post ladda-button" name="commit" type="submit">
+        Get it done!
+      </button>
+    </div>
+  </div>
+</div>
+<div class="col-12 col-lg-3 hire-container centy">
+  <div class="top-section">
+    <fieldset>
+      <div class="row">
+        <div class="input-container col-12">
+          <button class="btn btn-primary btn-post ladda-button" name="commit" type="submit">
+            Get it done!
+          </button>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <div class="row">
+        <div class="input-container col-12">
+          <div class="code-link">
+            <a class="toggle-trigger" data-hide=".code-link" data-ignore="ignore" data-show="#promo-code" href="#">
+              Have a promotion code?
+            </a>
+            <div class="contextual-help-trigger" cid="45"></div>
+            <div class="details-tooltip-content tooltip-content">
+              <div class="carrot"></div>
+              If you have a promotion code, please enter it here to receive a discount off this task.
+            </div>
+          </div>
+          <input class="hidden" id="promo-code" name="promo-code" placeholder="promo code" type="text">
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="btm-section">
+    <p class="happens-next">Here’s what happens next:</p>
+    <ul>
+      <li>
+        <span class="number">1</span>
+        <span class="muted">Your lobster gets in touch within 30 minutes.</span>
+      </li>
+      <li>
+        <span class="number">2</span>
+        <span class="muted">Your task is completed to your satisfaction.</span>
+      </li>
+      <li>
+        <span class="number">3</span>
+        <span class="muted">Once complete, your credit card is charged.</span>
+      </li>
+      <li>
+        <span class="number">4</span>
+        <span class="muted">You live smarter, focusing on what’s most important.</span>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+</form>
+</div>

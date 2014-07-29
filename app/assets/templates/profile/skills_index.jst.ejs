@@ -1,8 +1,8 @@
 <ul class="categories-list">
-  <%= categories.each(function (category) { %>
+  <% categories.each(function (category) { %>
     <li>
-      <h3><%= category.title %></h3>
-      <p><%= category.description %></p>
+      <h3><%= category.escape('title') %></h3>
+      <p><%= category.escape('description') %></p>
     </li>
     <% }); %>
 </ul>

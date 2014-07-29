@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :tasks
     resources :deals, only: [:create, :destroy]
     resources :categories, only: [:show, :index]
+    resources :skills, only: [:create, :update, :destroy]
     resources :availabilities, only: [:create, :destroy, :index, :show] do
       resources :availability_markers, only: [:create, :destroy, :index, :show]
     end
