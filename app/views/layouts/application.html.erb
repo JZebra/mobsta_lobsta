@@ -9,6 +9,11 @@
     type="text/javascript" 
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>">
   </script>
+  <script>
+  ML.currentUserID = <%= current_user.id %>;
+  ML.users.set(<%= User.all.to_json.html_safe %>)
+  ML.categories.set(<%= Category.all.to_json.html_safe %>)
+  </script>
 
 </head>
 <body>

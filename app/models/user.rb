@@ -35,6 +35,7 @@ class User < ActiveRecord::Base
   has_many :categories, through: :skills, source: :category
   
   has_one :availability
+  has_many :markers, through: :availability, source: :availability_markers
   
   has_attached_file :image, styles: { 
       medium: "225x225", 
