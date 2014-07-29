@@ -1,8 +1,9 @@
-ML.Views.Profile = Backbone.View.extend({
+ML.Views.Profile = Backbone.CompositeView.extend({
   template: JST['profile/profile'],
   
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'sync', this.render)
+    this.listenTo(this.collection, 'sync', this.render);
   },
   
   render: function () {

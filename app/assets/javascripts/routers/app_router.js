@@ -6,7 +6,7 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     ''              : 'dashboardShow',
     'index'         : 'indexShow',
-    // 'map'        : 'mapShow',
+    'map'           : 'mapShow',
     'photo'         : 'photoShow',
     'lobsters/:job' : 'indexShow',
     'profile'       : 'profileShow'
@@ -32,14 +32,21 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   
   filterShow: function (job) {
     // should look for users where user.categories.includes(job)
-    var lobsters = ML.Collections.users.where({ categories: job })
+    // var lobsters = ML.Collections.users.where({
+  //     user.categories: job })
     
     var filtered = new ML.Views.Index({ collection: lobsters });
     this._swapView(filtered);
   },
   
-  profileShow: function () {
+  profileShow: function (id) {
+    var currentUser = ML.Collections.users.getOrFetch(ML.currentUserID);
+    ML.Collections.categories.fetch();
     
+    var profile = new ML.Views.Profile({ 
+      model: currentUser, 
+      collection: ML.Collections.categories });
+    this._swapView(profile);
   },
   
   mapShow: function (id) { 

@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   get "user", to: "users#current"
   
   resources :users
-  resource :session
+  resource :session, only: [:create, :new, :destroy]
   
   namespace :api, defaults: { format: :json } do
     resources :tasks
     resources :deals, only: [:create, :destroy]
-    resources :availabilities do
-      resources :availability_markers
+    resources :categories, only: [:show, :index]
+    resources :availabilities, only: [:create, :destroy, :index, :show] do
+      resources :availability_markers, only: [:create, :destroy, :index, :show]
     end
   end
   
