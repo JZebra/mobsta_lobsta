@@ -9,6 +9,15 @@
 #
 
 class Availability < ActiveRecord::Base
+  validates :user_id, presence: true, uniqueness: true
+  before_validation :ensure_unique!
+  
   has_many :availability_markers, dependent: :destroy
   belongs_to :user
+  
+  def ensure_unique!
+    avail = Availability.find_by_user_id(current_user.id)
+    avail.destroy if avail
+    return true
+  end
 end

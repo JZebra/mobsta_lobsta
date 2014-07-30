@@ -1,5 +1,9 @@
 ML.Collections.Markers = Backbone.Collection.extend({
-  model: ML.Models.Marker,
+  url: function() {
+    return 'api/availability'
+  },
+  
+  model: ML.Models.Marker,  
   
   initialize: function(models, options) {
     if(options.availability) {

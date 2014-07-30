@@ -1,7 +1,11 @@
 class Api::AvailabilitiesController < ApplicationController
+  def index
+    @avails = Availability.all
+    render json: @avails
+  end
+  
   def create
     @avail = Availability.new
-    current_user.availability.destroy
     @avail.user_id = current_user.id
     
     if @avail.save

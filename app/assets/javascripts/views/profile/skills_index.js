@@ -16,3 +16,10 @@ ML.Views.SkillsIndex = Backbone.View.extend({
   }
   
 });
+
+//
+// <% var skill = this.collection.findWhere({ %>
+//   <% cat_id: category.get('id') %>
+// <% }) %>
+// <h3 class="pull-right">$<%= skill.escape("rate") %></h3>
+// <p><%= skill.escape("pitch") %></p>

@@ -3,6 +3,7 @@ ML.Views.Profile = Backbone.CompositeView.extend({
   
   //no collection or model to listenTo...
   initialize: function () {
+    this.skills = ML.Collections.skills.fetch();
     this.render();
   },
 

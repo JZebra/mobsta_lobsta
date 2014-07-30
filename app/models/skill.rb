@@ -13,13 +13,13 @@
 
 class Skill < ActiveRecord::Base
   validates :user_id, :cat_id, :rate, :pitch, presence: true
-  before_validation :ensure_unique_skill
+  before_validation :ensure_unique!
   validates_uniqueness_of :user_id, scope: :cat_id
   
   belongs_to :user
   belongs_to(:category, foreign_key: :cat_id)
   
-  def ensure_unique_skill
+  def ensure_unique!
     skill = Skill.find_by_user_id_and_cat_id(self.user_id, self.cat_id)
     skill.destroy if skill
     return true
