@@ -6,8 +6,6 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     ''              : 'dashboardShow',
     'index'         : 'indexShow',
-    'map'           : 'mapShow',
-    'photo'         : 'photoShow',
     'lobsters/:job' : 'indexShow',
     'profile'       : 'profileShow'
   },
@@ -18,9 +16,6 @@ ML.Routers.AppRouter = Backbone.Router.extend({
     this._swapView(dashboard);
   },
   
-  // lobsterShow: function () {
-    // var showView = ML.views.
-  // },
   
   indexShow: function () {
     //I think the collection should already be fetched....
@@ -41,23 +36,13 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   
   profileShow: function (id) {
     var currentUser = ML.Collections.users.getOrFetch(ML.currentUserID);
+    //does getOrFetch still trigger sync events?
     ML.Collections.categories.fetch();
     var profile = new ML.Views.Profile({ 
       model: currentUser, 
       collection: ML.Collections.categories
     });
     this._swapView(profile);
-  },
-  
-  mapShow: function (id) { 
-    var availability = new ML.Models.Availability({ user_id: ML.currentUserID })
-    var map = new ML.Views.Map({ model: availability });
-    this._swapView(map);
-  },
-  
-  photoShow: function () {
-    var photo = new ML.Views.Photo({});
-    this._swapView(photo);
   },
   
   _swapView: function (view) {

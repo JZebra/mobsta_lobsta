@@ -12,8 +12,9 @@ Rails.application.routes.draw do
     resources :deals, only: [:create, :destroy]
     resources :categories, only: [:show, :index]
     resources :users, only: [] do
-      resources :skills
+      resources :skills, except: [:index]
     end
+    resources :skills, only: [:index]
     resources :availabilities, only: [:create, :destroy, :index, :show] do
       resources :availability_markers, only: [:create, :destroy, :index, :show]
     end

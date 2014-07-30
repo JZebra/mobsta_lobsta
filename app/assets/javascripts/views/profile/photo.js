@@ -1,8 +1,10 @@
 ML.Views.Photo = Backbone.View.extend({
-  template: JST['users/photo'],
+  template: JST['profile/photo'],
   
   initialize: function () {
-    this.render();
+    this.listenTo(this.model, 'sync', this.render)
+    //depends on getOrFetch firing a sync event
+    //or maybe not...
   },
   
   events: {
@@ -21,7 +23,6 @@ ML.Views.Photo = Backbone.View.extend({
   },
   
   render: function () {
-    debugger;
     var content = this.template({ user: this.model });
     this.$el.html(content);
     return this;

@@ -1,8 +1,8 @@
 json.array! @users do |user|
 
   json.extract! user, :id, :name, :zipcode
-  json.image_sm_url user.image.url(:small)
-  json.image_md_url user.image.url(:medium)
+  json.img_sm_url user.image.url(:small)
+  json.img_md_url user.image.url(:medium)
 
   json.average_score user.average_score
 

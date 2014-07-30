@@ -6,7 +6,17 @@ ML.Views.Profile = Backbone.CompositeView.extend({
     this.skills = ML.Collections.skills.fetch();
     this.render();
   },
-
+  
+  renderMap: function () {
+    var availability = new ML.Models.Availability({ model: this.model })
+    var mapView = new ML.Views.Map({ model: availability });
+    this.addSubview("#availability", mapView);
+  },
+  
+  renderPhoto: function () {
+    var photoView = new ML.Views.Photo({ model: this.model });
+    this.addSubview("#photo", photoView);
+  },
   
   renderSkills: function () {
     var skills = ML.Collections.skills;
@@ -25,6 +35,9 @@ ML.Views.Profile = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({});
     this.$el.html(content);
+    //problem with listenTo in map...
+    this.renderMap();
+    this.renderPhoto();
     this.renderSkills();
     return this;
   }
