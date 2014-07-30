@@ -2,24 +2,29 @@
   <!-- <a href="#user" ><span class="lobster_span"></span></a> -->
   <div class="status"> <!-- whether the lobster is godlike or new -->
     <div class="row">
-      <div class="col-2 col-lg-12">
+      <div class="col-lg-12">
         <div class="image-container">
           <img src="https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/icons/no_image.png" 
           class="img-circle img-sm">
         </div>
-        <div class="lobster_details col-10 col-lg-12">
+        <div class="lobster_details col-12 col-lg-12">
           <h2 class="name"><%= user.escape("name") %></h2>
           <div class="secondary_details score col-12 col-lg-6">
             <div class="rating">
-              <h3><%= user.escape("average_score") %>% Positive Rating</h3>
+              <h4><%= user.escape("average_score") %>% Positive Rating</h4>
                 <p><%= user.escape("total_reviews") %> reviews </p>
             </div>
           </div>
           <div class="secondary_details rate col-12 col-lg-6">
-            <h3>$<%= user.escape("rate") %>/hour</h3>
+            <h4>$<%= user.escape("rate") %>/hour</h4>
             <p><%= user.escape("skill") %></p>
           </div>
         </div>
+        <a 
+          class="btn btn-primary"
+          href="#users/<%= user.escape('id') %>/hire">
+          Hire
+        </a>
       </div>
     </div>
   </div>

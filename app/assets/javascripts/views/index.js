@@ -8,7 +8,7 @@ ML.Views.Index = Backbone.CompositeView.extend({
   },
   
   events: {
-    "click .lobster_card" : "renderPanel",
+    // "click .lobster_card" : "renderPanel",
     "click .btn-see-more" : "renderRemainder",
     "click #see-more"     : "showRemainder"
   },
@@ -21,14 +21,14 @@ ML.Views.Index = Backbone.CompositeView.extend({
     }
   },
   
-  renderPanel: function (event) {
-    event.preventDefault();
-    var user = ML.Collections.users.getOrFetch(event.currentTarget.id);
-    var panelView = new ML.Views.UserPanel({ model: user });
-    //find the parent of the event.target and append the panel
-    this.addSubview(".lobsters", panelView)
-  },
-  
+  // renderPanel: function (event) {
+  //   event.preventDefault();
+  //   var user = ML.Collections.users.getOrFetch(event.currentTarget.id);
+  //   var panelView = new ML.Views.UserPanel({ model: user });
+  //   //find the parent of the event.target and append the panel
+  //   this.addSubview(".lobsters", panelView)
+  // },
+  //
   renderFilter: function () {
     var filterView = new ML.Views.FilterForm();
     this.addSubview(".filter-container", filterView);

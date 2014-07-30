@@ -4,10 +4,11 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   },
   
   routes: {
-    ''              : 'dashboardShow',
-    'index'         : 'indexShow',
-    'lobsters/:job' : 'filterShow',
-    'profile'       : 'profileShow'
+    ''                : 'dashboardShow',
+    'index'           : 'indexShow',
+    'lobsters/:job'   : 'filterShow',
+    'profile'         : 'profileShow',
+    'users/:id/hire'  : 'hireShow'
   },
   
   dashboardShow: function () {
@@ -43,6 +44,13 @@ ML.Routers.AppRouter = Backbone.Router.extend({
       collection: ML.Collections.categories
     });
     this._swapView(profile);
+  },
+  
+  hireShow: function (id) {
+    //this would be cooler as a modal on the lobsters index
+    var lobster = ML.Collections.users.getOrFetch(id);
+    var hireForm = new ML.Views.HireForm({ model: lobster });
+    this._swapView(hireForm);
   },
   
   _swapView: function (view) {
