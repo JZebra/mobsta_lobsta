@@ -46,7 +46,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password, :name, 
                                 :phone1, :phone2, :zipcode, 
-                                :image, :image_file_name, :image_content_type, 
-                                :image_file_size, :image_updated_at)
+                                :image)
   end
 end

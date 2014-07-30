@@ -9,6 +9,7 @@ ML.Views.Map = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render);
     
     var poly;
+    
     this.markers = [];
     this.path = new google.maps.MVCArray;
     var center = new google.maps.LatLng(37.781014,-122.41142);
@@ -94,6 +95,7 @@ ML.Views.Map = Backbone.View.extend({
   },
   
   render: function () {
+    debugger;
     var content = this.template({});
     this.$el.html(content);
     this.$('#map-container').prepend(this.$mapEl);
