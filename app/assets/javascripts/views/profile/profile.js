@@ -10,7 +10,7 @@ ML.Views.Profile = Backbone.CompositeView.extend({
   renderMap: function () {
     var availability = new ML.Models.Availability({ model: this.model })
     var mapView = new ML.Views.Map({ model: availability });
-    this.addSubview("#availability", mapView);
+    this.addSubview("#map", mapView);
   },
   
   renderPhoto: function () {
@@ -35,7 +35,6 @@ ML.Views.Profile = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({});
     this.$el.html(content);
-    //problem with listenTo in map...
     this.renderMap();
     this.renderPhoto();
     this.renderSkills();

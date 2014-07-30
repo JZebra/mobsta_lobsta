@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  wrap_parameters :user, include: [:image]
+  
   def new
   end
   
@@ -15,7 +17,6 @@ class UsersController < ApplicationController
   def current
     render json: current_user
   end
-    
   
   def create
     @user = User.new(user_params)
@@ -30,8 +31,22 @@ class UsersController < ApplicationController
     end
   end
   
+  def update
+    @user = User.find(params[:id])
+    
+    if @user.update_attributes(user_params)
+      render json: @user
+    else
+      render json: @user.errors.full_messages, status: :unprocessable_entity
+    end
+  end
+
+  
   private
   def user_params
-    params.require(:user).permit(:email, :password, :name, :phone1, :phone2, :zipcode, :image)
+    params.require(:user).permit(:email, :password, :name, 
+                                :phone1, :phone2, :zipcode, 
+                                :image, :image_file_name, :image_content_type, 
+                                :image_file_size, :image_updated_at)
   end
 end

@@ -7,6 +7,7 @@ ML.Views.Map = Backbone.View.extend({
   
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    
     var poly;
     this.markers = [];
     this.path = new google.maps.MVCArray;
@@ -93,7 +94,6 @@ ML.Views.Map = Backbone.View.extend({
   },
   
   render: function () {
-    //hits the render function but doesn't work
     var content = this.template({});
     this.$el.html(content);
     this.$('#map-container').prepend(this.$mapEl);
