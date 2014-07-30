@@ -6,8 +6,6 @@ ML.Views.Map = Backbone.View.extend({
   },
   
   initialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
-    
     var poly;
     
     this.markers = [];
@@ -91,7 +89,7 @@ ML.Views.Map = Backbone.View.extend({
         console.log("Failed to save availability")
       }
     })
-
+   this.listenTo(this.model, 'sync', this.render);
   },
   
   render: function () {

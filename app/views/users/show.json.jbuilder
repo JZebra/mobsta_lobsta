@@ -9,8 +9,8 @@ json.markers @user.markers
 
 # dashboard info
 json.average_score @user.average_score
-json.image_md_url @user.image.url(:medium)
-json.image_sm_url @user.image.url(:small)
+json.img_md_url @user.image.url(:medium)
+json.img_sm_url @user.image.url(:small)
 json.review @user.sample_review
 json.total_reviews @user.total_reviews
 json.sample_skills @user.sample_skills

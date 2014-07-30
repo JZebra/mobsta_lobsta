@@ -12,6 +12,7 @@ json.array! @users do |user|
   json.categories user.categories
   
   json.availability user.availability
+  json.markers user.markers
   
   #Replace this once skills filtering is functional
   if user.sample_skills[0]

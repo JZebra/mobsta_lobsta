@@ -6,7 +6,7 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   routes: {
     ''              : 'dashboardShow',
     'index'         : 'indexShow',
-    'lobsters/:job' : 'indexShow',
+    'lobsters/:job' : 'filterShow',
     'profile'       : 'profileShow'
   },
   
@@ -18,9 +18,8 @@ ML.Routers.AppRouter = Backbone.Router.extend({
   
   
   indexShow: function () {
-    //I think the collection should already be fetched....
-    // ML.Collections.users.fetch();
-    
+    ML.Collections.users.fetch();
+    //how do we avoid double-fetching if the user comes from the dashboard?
     var index = new ML.Views.Index({ collection: ML.Collections.users });
     this._swapView(index);
   },
@@ -29,8 +28,9 @@ ML.Routers.AppRouter = Backbone.Router.extend({
     // should look for users where user.categories.includes(job)
     // var lobsters = ML.Collections.users.where({
   //     user.categories: job })
+    ML.Collections.users.fetch();
     
-    var filtered = new ML.Views.Index({ collection: lobsters });
+    var filtered = new ML.Views.Index({ collection: ML.Collections.users });
     this._swapView(filtered);
   },
   

@@ -3,21 +3,22 @@ ML.Views.Index = Backbone.CompositeView.extend({
   
   initialize: function () {
     this.renderFilter();
-    this.renderTopThree();
     this.listenTo(this.collection, 'sync', this.render);
     // this.listenTo(this.collection, 'add', this.addUser)
   },
   
   events: {
     "click .lobster_card" : "renderPanel",
-    "click .btn-see-more" : "renderRemainder"
+    "click .btn-see-more" : "renderRemainder",
+    "click #see-more"     : "showRemainder"
   },
   
-  renderTopThree: function () {
-    var that = this;
-    this.collection.each(function (user) {
-      that.addCard(user)
-    })
+  renderPositions: function () {
+    var view = this;
+    for (var i = 0; i < 15 && i < this.collection.length; i++) {
+      var user = this.collection.models[i];
+      view.addCard("#position-" + i, user)
+    }
   },
   
   renderPanel: function (event) {
@@ -33,22 +34,24 @@ ML.Views.Index = Backbone.CompositeView.extend({
     this.addSubview(".filter-container", filterView);
   },
   
-  renderRemainder: function () {
-    var remainderView = new ML.Views.Remainder();
-    this.addSubview(".remainder-container", remainderView);
+  showRemainder: function (event) {
+    event.preventDefault();
+    console.log('button clicked')
+    var $button = $('#see-more')
+    var $remainder = $('.remainder-container')
+    $button.toggle();
+    $remainder.toggle();
   },
   
-  addCard: function (user) {
+  addCard: function (selector, user) {
     var cardView = new ML.Views.UserCard({ model: user })
-    this.addSubview(".lobster-card-container", cardView)
+    this.addSubview(selector, cardView)
   },
   
   render: function () {
     var content = this.template({ users: this.collection });
     this.$el.html(content);
-    this.renderTopThree();
-    debugger;
-    //placeholder for now. Eventually need to populate the divs individually
+    this.renderPositions();
     this.attachSubviews();
     return this;
   }

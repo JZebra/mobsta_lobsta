@@ -2,64 +2,62 @@
 
 <div class="main-content">
   <div class="recommendations-container">
-    <div class="top-three-container">
-      <div class="row row-gutter top-three-row lobster-card-container">
-        <div class="col-lg-4 col-12 lobster-card-container position-1"></div>
-        <div class="col-lg-4 col-12 lobster-card-container position-2"></div>
-        <div class="col-lg-4 col-12 lobster-card-container position-3"></div>
-      </div>
 
-      <div class="remainder-container">
-        <button class="btn btn-default btn-see-more"></button>
+    <div class="row row-gutter top-three-row lobster-card-container">
+      <div class="col-lg-4 col-12 lobster-card-container" id="position-0"></div>
+      <div class="col-lg-4 col-12 lobster-card-container" id="position-1"></div>
+      <div class="col-lg-4 col-12 lobster-card-container" id="position-2"></div>
+    </div>
+    <div class="show-more row" style="display: block">
+      <button class="btn btn-default centy" id="see-more">
+        Show More Lobsters
+      </button>
+    </div>
+
+    <div class="remainder-container" style="display: none">
+      <div class="select-container">
+        <div class="row row-gutter">
+          <form class="col-lg-2 select">
+            Sort your lobsters by:
+            <select class="form-control" id="sort-select">
+              <option selected="" value="sortByRecommended">
+                Recommended
+              </option>
+              <option value="sortByReviews">
+                Most reviews
+              </option>
+              <option value="sortByPrice.asc">
+                Price (lowest to highest)
+              </option>
+              <option value="sortByPrice.desc">
+                Price (highest to lowest)
+              </option>
+              <option value="sortByRatings">
+                Rating
+              </option>
+            </select>
+          </form>
+        </div>
+        <div class="items-container">
+          <div class="row row-gutter lobster-card-container remaining-lobsters">
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-3"></div>
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-4"></div>
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-5"></div>
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-6"></div>
+          </div>
+          <div class="row row-gutter row-2 lobster-card-container remaining-lobsters">
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-7"></div>
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-8"></div>
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-9"></div>
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-10"></div>
+          </div>
+          <div class="row row-gutter row-3 lobster-card-container remaining-lobsters">
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-11"></div>
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-12"></div>
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-13"></div>
+            <div class="col-12 col-lg-3 lobster-card-container" id="position-14"></div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="remainder-container">
-    <div class="select-container">
-      <div class="row row-gutter">
-        <div class="col-12 select">
-          There's more where that came from. Sort your lobsters by:
-          <select class="sort-select" id="sort-select">
-            <option selected="" value="sortByRecommended">
-              recommended
-            </option>
-          </option>
-          <option value="sortByReviews">
-            most reviews
-          </option>
-          <option value="sortByPrice.asc">
-            price (lowest to highest)
-          </option>
-          <option value="sortByPrice.desc">
-            price (highest to lowest)
-          </option>
-          <option value="sortByRatings">
-            highest rating
-          </option>
-        </select>
-      </div>
-    </div>
-  </div>
-  <div class="items-container">
-    <div class="row row-gutter row-1 lobster-card-container remaining-lobsters">
-      <div class="col-12 col-lg-3 lobster-card-container position-1"></div>
-      <div class="col-12 col-lg-3 lobster-card-container position-2"></div>
-      <div class="col-12 col-lg-3 lobster-card-container position-3"></div>
-      <div class="col-12 col-lg-3 lobster-card-container position-4"></div>
-    </div>
-    <div class="row row-gutter row-2 lobster-card-container remaining-lobsters">
-      <div class="col-12 col-lg-3 lobster-card-container position-1"></div>
-      <div class="col-12 col-lg-3 lobster-card-container position-2"></div>
-      <div class="col-12 col-lg-3 lobster-card-container position-3"></div>
-      <div class="col-12 col-lg-3 lobster-card-container position-4"></div>
-    </div>
-    <div class="row row-gutter row-3 lobster-card-container remaining-lobsters">
-      <div class="col-12 col-lg-3 lobster-card-container position-1"></div>
-      <div class="col-12 col-lg-3 lobster-card-container position-2"></div>
-      <div class="col-12 col-lg-3 lobster-card-container position-3"></div>
-      <div class="col-12 col-lg-3 lobster-card-container position-4"></div>
-    </div>
-  </div>
-</div>
 
  
