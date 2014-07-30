@@ -1,16 +1,34 @@
 ML.Views.SkillsForm = Backbone.View.extend({
   template: JST['profile/skills_form'],
   
-  initialize: function () {
-    // this.listenTo(this.model, 'sync', this.render);
-    this.render()
+  initialize: function (options) {
+    this.categories = options.categories;
+    this.listenTo(this.collection, 'sync', this.render);
+  },
+  
+  events:{
+    "submit #skill-form" : "saveSkill"
+  },
+  
+  saveSkill: function (event) {
+    event.preventDefault();
+    var view = this;
+    var data = $(event.target).serializeJSON();
+    this.collection.create(data, {
+      wait: true,
+      success: function () {
+        view.render();
+        //event.target should reset
+      }
+    });
   },
   
   
   render: function () {
-    var content = this.template({ categories: this.collection });
+    var content = this.template({  
+      categories: this.categories 
+    });
     this.$el.html(content);
-    $("#info-popover").popover();
     return this;
   }
   

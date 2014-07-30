@@ -1,6 +1,16 @@
 class Api::SkillsController < ApplicationController
   before_action :require_signed_in!
   
+  def index
+    @skills = User.find(params[:user_id]).skills
+    render json: @skills
+  end
+  
+  # def show
+  #   @skills = User.find(current_user.id).skills
+  #   render json: @skills
+  # end
+  
   def create
     @skill = current_user.skills.new(skill_params)
     
