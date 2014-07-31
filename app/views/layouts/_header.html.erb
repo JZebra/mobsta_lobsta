@@ -1,5 +1,5 @@
 <div class="header">
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -11,7 +11,9 @@
         <a class="navbar-brand" href="#">MobstrLobstr</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
         <ul class="nav navbar-nav navbar-right">
+          <% if signed_in? %>
           <li>
             <a href="#">Dashboard</a>
           </li>
@@ -21,6 +23,22 @@
           <li>
             <%= link_to "Sign out", session_url, method: :delete %>
           </li>
+          <% else %>
+          <li>
+            <a
+              data-toggle="modal" 
+              data-target="#signup_modal">
+              Sign up
+            </a>
+          </li>
+          <li>
+            <a
+              data-toggle="modal" 
+              data-target="#login_modal">
+              Log in
+            </a>
+          </li>
+          <% end %>
         </ul>
       </div>
     </div>

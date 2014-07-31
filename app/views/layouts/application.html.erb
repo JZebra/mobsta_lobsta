@@ -8,9 +8,11 @@
   <script type="text/javascript" 
     src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>">
   </script>
+  <% if signed_in? %>
   <script>
     ML.currentUserID = <%= current_user.id %>;
   </script>
+  <% end %>
 </head>
 <body>
   <%= render partial: "layouts/header" %>

@@ -26,8 +26,18 @@ $black: #010101;
 $gray: #181B22;
 $lightblue: #1194D4;
 
+//darkly colors
+$dblue: #3498db;
+$dgreen: #00bc8c;
+$dred: #e74c3c;
+$dyellow: #f39c12;
+
+
 #main {
   background-color: #95a5a6;
+  padding-top: 60px;
+  background-image: url(https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/backgrounds/boat.jpg);
+  background-size: cover;
 }
 
 .row {
@@ -70,7 +80,7 @@ list-style-type: none;
 
 .btn-default{
 //  color: $burgundy;
-//  border-color: $burgundy;
+  border-color: black;
 background-color: $burgundy;
 }
 
@@ -86,4 +96,8 @@ background-color: $burgundy;
 
 .footer-container{
   margin-top: 30px;
+}
+
+.navbar {
+  margin-bottom: 0;
 }

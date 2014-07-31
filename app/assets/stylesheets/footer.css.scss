@@ -1,0 +1,29 @@
+//darkly colors
+$dblue: #3498db;
+$dgreen: #00bc8c;
+$dred: #e74c3c;
+$dyellow: #f39c12;
+
+.footer-container {
+  font-size: 2rem;  
+}
+
+.footer-title {
+  color: $dgreen;
+}
+
+.apps-message {
+  font-size: 1.6rem;
+}
+
+ul a {
+  color: white;
+}
+
+img {
+  border-radius: 3px;
+  :first-of-type {
+    //not working
+    margin-left: 2rem;
+  }
+}
