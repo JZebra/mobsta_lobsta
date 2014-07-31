@@ -8,8 +8,8 @@ ML.Views.Profile = Backbone.CompositeView.extend({
   },
   
   renderMap: function () {
-    var availability = new ML.Models.Availability({ model: this.model })
-    var mapView = new ML.Views.Map({ model: availability });
+    // var availability = new ML.Models.Availability({ model: this.model })
+    var mapView = new ML.Views.Map({ model: this.model });
     this.addSubview("#map", mapView);
   },
   
@@ -35,9 +35,9 @@ ML.Views.Profile = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({});
     this.$el.html(content);
-    this.renderMap();
-    this.renderPhoto();
     this.renderSkills();
+    this.renderPhoto();
+    this.renderMap();
     return this;
   }
   

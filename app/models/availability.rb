@@ -16,7 +16,7 @@ class Availability < ActiveRecord::Base
   belongs_to :user
   
   def ensure_unique!
-    avail = Availability.find_by_user_id(current_user.id)
+    avail = Availability.find_by_user_id(self.user_id)
     avail.destroy if avail
     return true
   end

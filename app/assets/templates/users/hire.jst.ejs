@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="top-aligned">
+  <form class="top-aligned" id="hire-form">
     <div class="row">
       <div class="col-12 col-lg-3 lobster-info-container">
         <div class="lobster-avatar">
@@ -15,6 +15,8 @@
             <p>Positive Rating</p>
             <div class="lobster-total"><%= user.get('total_reviews') %></div>
           </div>
+<!--hidden input, remove when datepicker exists -->
+          <input type="hidden" name="date" value="2015-01-01">
 
           <div class="lobster-price">
             <h2>Skill.rate</h2>
@@ -35,7 +37,7 @@
               <div class="input-container col-12">
                 <i class="ss-dropdown ss-icon toggle-trigger" data-hide=".title-edit" data-show=".title-show"></i>
                 <label class="text-label" for="title">Category</label>
-                <select class="category-select form-control" id="category">
+                <select class="category-select form-control" id="cat_id" name="cat_id">
                   <option class="category-option">
                     Whaddaya need done?
                   </option>
@@ -58,7 +60,7 @@
             <div class="time-slot-container input-container" style="opacity: 1;">
               <div class="radio-button">
                 <label class="time-label disabled" for="time_morning">
-                  <input class="time-slot-input" id="time_morning" name="time" type="radio" value="morning">
+                  <input class="time-slot-input" id="time_morning" name="timeframe" type="radio" value="morning">
                   <span class="time-slot">
                     Morning
                     <span>(6am - 12pm)</span>
@@ -67,7 +69,7 @@
               </div>
               <div class="radio-button">
                 <label class="time-label disabled" for="time_afternoon">
-                  <input class="time-slot-input" id="time_afternoon" name="time" type="radio" value="afternoon">
+                  <input class="time-slot-input" id="time_afternoon" name="timeframe" type="radio" value="afternoon">
                   <span class="time-slot">
                     Afternoon
                     <span>(12pm - 6pm)</span>
@@ -76,7 +78,7 @@
               </div>
               <div class="radio-button">
                 <label class="time-label" for="time_evening">
-                  <input class="time-slot-input" id="time_evening" name="time" type="radio" value="evening">
+                  <input class="time-slot-input" id="time_evening" name="timeframe" type="radio" value="evening">
                   <span class="time-slot">
                     Evening
                     <span>(6pm - 12am)</span>
@@ -85,7 +87,7 @@
               </div>
               <div class="radio-button">
                 <label class="time-label" for="time_night">
-                  <input class="time-slot-input" id="time_night" name="time" type="radio" value="night">
+                  <input class="time-slot-input" id="time_night" name="timeframe" type="radio" value="night">
                   <span class="time-slot">
                     Night
                     <span>(12am - 6am)</span>

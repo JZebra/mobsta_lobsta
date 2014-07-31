@@ -17,7 +17,7 @@
 #
 
 class Task < ActiveRecord::Base
-  validates :poster_id, :category, :date, :time_of_day, presence: true
+  validates :poster_id, :cat_id, :timeframe, presence: true
   
   belongs_to(
   :poster,
