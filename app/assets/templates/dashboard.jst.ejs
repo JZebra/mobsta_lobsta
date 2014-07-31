@@ -91,32 +91,33 @@
     <!--end of users, start of right column -->
     <div class="col-lg-4 sm-hide md-hide sections-container">
       <div class="sidebar-section">
-        <div class='row centy'>
+        <div class="sidebar-form">
+        <div class='row text-center'>
           <h3>Stop Sleeping with the Fishes</h3>
         </div>
         <div class='form-container'>
           <form>
             <div class="row row-gutter">
-              <div class="col-lg-6 centy">
+              <div class="col-lg-6 text-center">
                 <div class="selector-button">
                   <label class="job-type-label heist-job" for="heist-btn">
                     <input class="selector-input" id="heist-btn" name="job-type" type="radio" value="heist">
                     <div class="job-type-inner">
                       <div>
-                        <img class="icon white" src="https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/icons/thief.png"></img>
+                        <img class="icon" src="https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/icons/thief.png"></img>
                       </div>
                       <div class="category">Heists</div>
                     </div>
                   </label>
                 </div>
               </div>
-              <div class="col-lg-6 centy">
+              <div class="col-lg-6 text-center">
                 <div class="selector-button">
                   <label class="job-type-label teach-job" for="teach-btn">
                     <input class="selector-input" id="teach-btn" name="job-type" type="radio" value="teach">
                     <div class="job-type-inner">
                      <div>
-                       <img class="icon white" src="https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/icons/crosshair.png"></img>
+                       <img class="icon" src="https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/icons/crosshair.png"></img>
                      </div>
                       <div class="category">Teach a Lesson</div>
                     </div>
@@ -125,22 +126,22 @@
               </div>
             </div>
             <div class="row row-gutter">
-              <div class="col-lg-6 centy">
+              <div class="col-lg-6 text-center">
                 <div class="selector-button">
                   <label class="job-type-label delivery-job" for="personal-delivery-btn">
                     <input class="selector-input" id="delivery-btn" name="job-type" type="radio" value="delivery">
                     <div class="job-type-inner">
                       <div>
-                        <img class="icon white" src="https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/icons/truck.png"></img>
+                        <img class="icon" src="https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/icons/truck.png"></img>
                       </div>
                       <div class="category">Delivery</div>
                     </div>
                   </label>
                 </div>
               </div>
-              <div class="col-lg-6 centy">
+              <div class="col-lg-6 text-center">
                 <div class="selector-button">
-                  <label class="job-type-label white-collar-job" for="white-collar">
+                  <label class="job-type-label-collar-job" for="white-collar">
                     <input class="selector-input" id="white-collar" name="job-type" type="radio" value="white-collar">
                     <div class="job-type-inner">
                       <div>
@@ -153,26 +154,36 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-12 centy">
+              <div class="col-12 text-center">
                 <a class="link-other" href="#">Looking for something else?</a>
               </div>
             </div>
             <div class="row">
               <div class="col-12">
-                <input id="postal-code" pattern="[0-9]*" placeholder="zip code" type="text">
+                <input 
+                  id="postal-code" 
+                  pattern="[0-9]*" 
+                  class="form-control"
+                  placeholder="zip code" 
+                  type="text">
               </div>
             </div>
             <div class="row">
               <div class="col-12">
-                <button class="btn btn-primary btn-submit" type="submit">
+                <a
+                  class="btn btn-primary btn-submit form-control"
+                  href="#lobsters/job">
                   Find a Lobster
-                </button>
+                </a>
               </div>
             </div>
           </form>
         </div>
-        <div class='greatest-hits-section row col-12'>
-          <h3 class='centy'>Greatest Hits</h3>
+        </div>
+        <div class='greatest-hits-section'>
+          <div class="title">
+            <h3 class='text-center'>Greatest Hits</h3>
+          </div>
           <ul>
             <li>Wait in line for the new Doomsday Machine</li>
             <li>Stop a plumber from reaching my castle and kidnapping my princess</li>

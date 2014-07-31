@@ -24,21 +24,25 @@ $green: #0C3A2D;
 $white: #FFFFFF;
 $black: #010101;
 $gray: #181B22;
-$lightblue: #1978A5;
-$scarlet: #A51122;
-$lightblue: #6FA2CB;
+$lightblue: #1194D4;
+
+#main {
+  background-color: #95a5a6;
+}
+
+.row {
+  padding: 1rem;
+}
 
 h1, h2, h3, h4, h5, h6{
-  font-family: 'Montserrat', sans-serif;
-}
-
-p, li{
+//  font-family: 'Montserrat', sans-serif;
   font-family: 'PT Sans', sans-serif;
+  color: #ecf0f1;
 }
 
-.centy {
-    margin-left: auto;
-    margin-right: auto;
+p, li, span{
+  font-family: 'PT Sans', sans-serif;
+  color: #ecf0f1;
 }
 
 .icon{
@@ -58,6 +62,10 @@ img.social{
 
 ul.no-bullets{
 list-style-type: none;
+}
+
+.btn {
+  color: #ecf0f1;
 }
 
 .btn-default{
