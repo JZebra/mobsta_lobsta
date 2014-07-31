@@ -6,6 +6,7 @@ json.extract! @user, :id, :name, :email, :phone1,
 json.skills @user.skills
 json.availability @user.availability
 json.markers @user.markers
+json.categories @user.categories
 
 # dashboard info
 json.average_score @user.average_score

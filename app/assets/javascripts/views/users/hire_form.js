@@ -2,34 +2,35 @@ ML.Views.HireForm = Backbone.View.extend({
   template: JST['users/hire'],
   
   initialize: function (options) {
-    this.categories = options.categories;
-    this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.model, 'sync', this.render);
   },
   
-  events:{
-    "submit #skill-form" : "saveSkill"
+  events: {
+    "submit #hire-form" : "saveTask"
   },
   
-  saveSkill: function (event) {
+  saveTask: function (event) {
     event.preventDefault();
     var view = this;
     var data = $(event.target).serializeJSON();
-    this.collection.create(data, {
+    var task = new ML.Models.Task()
+    task.save(data, {
       wait: true,
       success: function () {
-        view.render();
-        //event.target should reset
+        window.alert("The lobster has been notified. Expect to be contacted in the next 30 minutes.")
+      },
+      error: function () {
+        console.log('wtf?')
       }
     });
   },
   
-  
   render: function () {
-    var content = this.template({  
-      categories: this.categories 
-    });
+    debugger;
+    var content = this.template({ user: this.model });
     this.$el.html(content);
     return this;
   }
   
 });
+

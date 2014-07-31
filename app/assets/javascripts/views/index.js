@@ -36,7 +36,6 @@ ML.Views.Index = Backbone.CompositeView.extend({
   
   showRemainder: function (event) {
     event.preventDefault();
-    console.log('button clicked')
     var $button = $('#see-more')
     var $remainder = $('.remainder-container')
     $button.toggle();
