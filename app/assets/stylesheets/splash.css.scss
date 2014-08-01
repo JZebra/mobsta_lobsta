@@ -6,38 +6,65 @@ $dred: #e74c3c;
 $dyellow: #f39c12;
 
 .top {
-  //image getting strectched
   background-image: url(https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/backgrounds/traps_sun.jpg);
+  background-size: 2090px 1385px;
+  background-repeat: no-repeat;
   position: relative;
+  .button-container {
+    border: 2px solid $burgundy;
+    border-radius: 4px;
+
+    position: absolute;
+    top: 50%;
+    margin-top: -150px;
+    left: 50%;
+    margin-left: -150px;
+  
+    width: 300px;
+    height: 300px;
+    
+    background-color: rgba(149, 165, 166, .6);
+    border-radius: 5px;
+    padding: 10px;
+    .btn {
+      border: 1px solid $burgundy;
+    }
+  }
 }
 
-html, body, .static-splash, section {
-  height: 100%;
+html, body, section {
+    height: 100%;
 }
 
-.button-container {
-  border: 2px solid $burgundy;
-  border-radius: 4px;
-
-  position: absolute;
-  top: 50%;
-  margin-top: -150px;
-  left: 50%;
-  margin-left: -150px;
-  
-  width: 300px;
-  height: 300px;
-  
-  background-color: rgba(255, 255, 255, .4);
-  border-radius: 5px;
-  padding: 10px;
-  
-  .text_center {
+section.why {
+  padding: 5% 0% 0%;
+  h1 {
+    font-size: 6rem;
+  }
+  .nums-counter {
+    position: relative;
+    left: 50%;
+    margin-left: -45px;
+    margin-bottom: 2rem;
+    margin-top: 6rem;
+    border-radius: 50%;
+    background: $burgundy;
+    height: 90px;
+    width: 90px;
+    padding-top: 2rem;
+  }
+  h2 {
+    font-size: 4rem;
+  }
+  p.nums-title {
+    font-size: 2rem;
+  }
+  p.nums-text {
+    font-size: 1.6rem;
   }
 }
 
 .signup-modal {
-  //rounded corners not working
   border-radius: 4px;
   .modal-header {
     background: $dgreen;
@@ -54,24 +81,3 @@ html, body, .static-splash, section {
     border-top-left-radius: 4px;
   }
 }
-
-// modal forms not going full-width
-.why {
-  padding: 10% 0% 0%;
-}
-
-.nums-counter {
-  position: relative;
-  left: 50%;
-  margin-left: -30px;
-  margin-bottom: 2rem;
-  margin-top: 5rem;
-
-  border-radius: 50%;
-  background: $burgundy;
-  height: 64px;
-  width: 64px;
-  padding-top: 1.5rem;
-
-}
-
