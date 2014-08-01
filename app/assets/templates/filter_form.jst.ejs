@@ -1,22 +1,5 @@
-<form class="recommendation-form">
-  <div class="recommendation-title">
-    <h1 class="dropdown-trigger" cid="13">
-      Find a Lobster
-      <i class="ss-navigatedown"></i>
-    </h1>
-    <ul class="job-type-dropdown-content" style="display:none;">
-      <li>
-        <a class="link-recommendations" href="/tasks/cleaning/recommendations">cleaner</a>
-      </li>
-      <li>
-        <a class="link-recommendations" href="/tasks/moving-help/recommendations">mover</a>
-      </li>
-      <li>
-        <a class="link-recommendations" href="/tasks/handyman/recommendations">handyman</a>
-      </li>
-    </ul>
-  </div>
-  <a class="link-other" href="#">Looking for something else?</a>
+<form class="filter-form">
+  <h1>Find a Lobster</h1>
   <div class="filters row row-thin">
     <div class="col-12 col-lg-4">
       <span class="category-fields field-group">
@@ -25,94 +8,72 @@
           <span class="category-info-trigger contextual-help-trigger"></span>
         </div>
         <select class="category-select form-control">
-          <option class="category-option" value="1">Assassination</option>
-          <option class="category-option" value="2">Cleaning</option>
-          <option class="category-option" value="3">Hatching Elaborate Plots</option>
-          <option class="category-option" value="4">Bank Robbery</option>
-          <option class="category-option" value="5">Drug Delivery</option>
-          <option class="category-option" value="6">Personal Security</option>
-          <option class="category-option" value="7">Kidnapping</option>
-          <option class="category-option" value="0">Running from the Law</option>
+          <% categories.each( function (category) { %>
+            <option 
+              value="<%= category.escape("id") %>">
+              <%= category.escape('title') %>
+          </option>
+          <% }) %>
         </select>
       </span>
       <span class="postal-fields field-group">
         <div class="title">in</div>
         <input 
-          class="form-control"
-          id="postal-code" 
-          name="postal_code" 
-          pattern="[0-9]*" 
-          placeholder="zip code" 
-          type="text">
+        class="form-control"
+        id="postal-code" 
+        name="postal_code" 
+        pattern="[0-9]*" 
+        placeholder="zip code" 
+        type="text">
       </span>
       <span class="white-separator"></span>
     </div>
     <div class="col-12 col-lg-8">
       <div class="row row-thin">
         <div class="col-12 col-lg-7">
-          <span class="date-fields datepicker-container field-group"><div class="datepicker" cid="7"><div class="title">on</div>
-            <input 
-              class="picker-trigger form-control" 
-              id="date" 
-              name="date" 
-              readonly="readonly" 
-              type="text" 
-              value="any day" 
-              data-date="2014-07-26">
-            <i class="ss-icon ss-calendar picker-trigger"></i>
-            <div class="datepicker-tooltip tooltip">
-              <div class="anyday-container">
-                <div class="datepicker-selection datepicker-anyday">any day</div>
-              </div>
-              <input 
-                class="form-control"
-                id="date-hidden" 
-                min="2014-07-25" 
-                style="display:none;" 
-                type="date">
-<!--datepicker goes here -->
-            </div></div>
-          </div></span>
-          <span class="slot-fields field-group">
-            <div class="title">within</div>
-            <select class="slot-select form-control">
-
-              <option class="slot-option" value="anytime">anytime</option>
-
-              <option class="slot-option" value="morning">morning (8am - 12pm)</option>
-
-              <option class="slot-option" value="afternoon">afternoon (12pm - 4pm)</option>
-
-              <option class="slot-option" value="evening">evening (4pm - 8pm)</option>
-
+          <input 
+          data-provide="datepicker" 
+          class="datepicker" 
+          data-date-format="mm/dd/yyyy">
+          <span class="glyphicon glyphicon-calendar"></span>
+        </div>
+      </div>
+      <span class="time-fields field-group">
+        <div class="title">within</div>
+        <select class="time-select form-control">
+          <option class="time-option" value="anytime">anytime</option>
+          <option class="time-option" value="morning">morning (6am - 12pm)</option>
+          <option class="time-option" value="afternoon">afternoon (12pm - 6pm)</option>
+          <option class="time-option" value="evening">evening (6pm - 12am)</option>
+          <option class="time-option" value="night">night (12am - 6am)</option>
+        </select>
+      </span>
+    </div>
+    <div class="col-12 col-lg-5">
+      <div class="row row-thin">
+        <div class="col-12 col-md-4 col-lg-5">
+          <span class="special-requirement-fields field-group">
+            <div class="title">needs</div>
+            <select class="special-select form-control">
+              <option value="">---</option>
+              <option value="sm-arms">Small arms</option>
+              <option value="a-arms">Assault weapons</option>
+              <option value="explosives">Explosives</option>
+              <option value="car">Car</option>
+              <option value="truck">Truck</option>
+              <option value="other">Other</option>
             </select>
           </span>
+          <span class="white-separator"></span>
         </div>
-        <div class="col-12 col-lg-5">
-          <div class="row row-thin">
-            <div class="col-12 col-md-4 col-lg-5">
-              <span class="special-requirement-fields field-group">
-                <div class="title">needs</div>
-                <select class="special-select form-control">
-                  <option value="">---</option>
-                  <option value="sm-arms">Small arms</option>
-                  <option value="a-arms">Assault weapons</option>
-                  <option value="explosives">Explosives</option>
-                  <option value="car">Car</option>
-                  <option value="truck">Truck</option>
-                  <option value="other">Other</option>
-                </select>
-              </span>
-              <span class="white-separator"></span>
-            </div>
-            <div class="col-12 col-md-8 col-lg-7">
-              <button class="btn btn-tertiary btn-search" name="commit" type="submit">
-                Find
-              </button>
-            </div>
-          </div>
+        <div class="col-12 col-md-8 col-lg-7">
+          <button class="btn btn-tertiary btn-search" name="commit" type="submit">
+            Find
+          </button>
         </div>
       </div>
     </div>
   </div>
+</div>
+</div>
 </form>

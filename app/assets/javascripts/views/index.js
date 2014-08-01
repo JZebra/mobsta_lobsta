@@ -2,9 +2,10 @@ ML.Views.Index = Backbone.CompositeView.extend({
   template: JST['index'],
   
   initialize: function () {
+    this.categories = ML.Collections.categories;
     this.renderFilter();
+    //this.collection is users
     this.listenTo(this.collection, 'sync', this.render);
-    // this.listenTo(this.collection, 'add', this.addUser)
   },
   
   events: {
@@ -40,9 +41,9 @@ ML.Views.Index = Backbone.CompositeView.extend({
   //   //find the parent of the event.target and append the panel
   //   this.addSubview(".lobsters", panelView)
   // },
-  //
+ 
   renderFilter: function () {
-    var filterView = new ML.Views.FilterForm();
+    var filterView = new ML.Views.FilterForm({ collection: this.categories});
     this.addSubview(".filter-container", filterView);
   },
   

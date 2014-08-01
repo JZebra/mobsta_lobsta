@@ -3,12 +3,12 @@ ML.Views.FilterForm = Backbone.View.extend({
   
   initialize: function () {
     // this.collection = this.model.lists();
-    // this.listenTo(this.model, 'sync', this.render);
-    this.render();
+    this.listenTo(this.collection, 'sync', this.render);
+    // this.render();
   },
   
   render: function () {
-    var content = this.template({ user: this.model });
+    var content = this.template({ categories: this.collection });
     this.$el.html(content);
     return this;
   }

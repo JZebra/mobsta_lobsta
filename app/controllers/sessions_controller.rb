@@ -10,15 +10,12 @@ class SessionsController < ApplicationController
       # render json: @user
       redirect_to root_url
     else
-      # render json: ["Invalid email or password"], status: :unprocessable_entity
-      flash.now[:errors] = ["Invalid email and/or password"]
-      render :new
+      render json: ["Invalid email or password"], status: :unprocessable_entity
     end
   end
   
   def destroy
     sign_out!
-    # render json: {}
-    redirect_to new_session_url
+    render json: {}
   end  
 end
