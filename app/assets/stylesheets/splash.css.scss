@@ -26,8 +26,11 @@ $dyellow: #f39c12;
     background-color: rgba(149, 165, 166, .6);
     border-radius: 5px;
     padding: 10px;
-    .btn {
+    .btn, .btn-lg {
       border: 1px solid $burgundy;
+    }
+    .guest {
+      margin-top: 10rem;
     }
   }
 }

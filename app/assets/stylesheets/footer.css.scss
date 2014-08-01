@@ -3,27 +3,26 @@ $dblue: #3498db;
 $dgreen: #00bc8c;
 $dred: #e74c3c;
 $dyellow: #f39c12;
+$dgray: #464545;
 
-.footer-container {
-  font-size: 1.6rem;  
-}
 
-.footer-title {
-  color: $dgreen;
-}
+footer {
+  background-color: $dgray;
+  padding: 1%;
+  .footer-title, .social-text {
+    color: $dgreen;
+  }
 
-.apps-message {
-  font-size: 1.4rem;
-}
+  .apps-message {
+    font-size: 1.4rem;
+  }
 
-ul a {
-  color: white;
-}
+  ul a {
+    color: white;
+  }
 
-img {
-  border-radius: 3px;
-  :first-of-type {
-    //not working
-    margin-left: 2rem;
+  img {
+    border-radius: 3px;
+    margin: 0 0.8rem;
   }
 }

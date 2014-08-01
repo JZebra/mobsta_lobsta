@@ -16,6 +16,19 @@
         Log in
       </button>
     </div>
+    <div class="guest col-12" >
+      <form action="/session" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="user[email]" value="guest@guest.com">
+        <input type="hidden" name="user[password]" value="wootguest">
+        <button 
+          type="submit" 
+          class="btn btn-warning navbar-btn form-control"
+          id="user_login">
+          Log in as Guest
+        </button>
+      </form>
+    </div>
   </div>
 </section>
 <section class="why">
@@ -78,11 +91,10 @@
         <input class='form-control' name="user[zipcode]" type="text"><br>
       </label><br>
       <input 
-      type="submit" 
-      value="Create account" 
-      class="btn btn-primary"
-      id="new_user_signup">
-      <br>
+        type="submit" 
+        value="Create account" 
+        class="btn btn-primary"
+        id="new_user_signup">
     </form>      
   </div>
 </div><!-- /.modal-content -->
@@ -111,11 +123,10 @@
       <input class='form-control' name="user[password]" type="password"><br>
     </label><br>
     <input 
-    type="submit" 
-    value="Log in" 
-    class="btn btn-primary"
-    id="user_login">
-    <br>
+      type="submit" 
+      value="Log in" 
+      class="btn btn-primary"
+      id="user_login">
   </form>      
 </div>
 <div class="modal-footer">
