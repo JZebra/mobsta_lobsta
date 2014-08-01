@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "pages#root"
   get "splash", to: "pages#splash"
-  get "details", to: "pages#details"
+  get "dashboard", to: "pages#details"
   get "user", to: "users#current"
   
   resources :users

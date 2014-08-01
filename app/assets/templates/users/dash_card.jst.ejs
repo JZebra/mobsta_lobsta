@@ -1,17 +1,15 @@
 <div class="lobster_card" id="<%= user.escape('id')%>" >
   <!-- <a href="#user" ><span class="lobster_span"></span></a> -->
-  <div class="status centy"> <!-- whether the lobster is godlike or new -->
+  <div class="status"> <!-- whether the lobster is godlike or new -->
 
     <div class="image-container">
-      <img src="https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/icons/no_image.png" class="img-circle img-sm">
+      <img src="<%= user.get('img_sm_url') %>" class="img-circle-sm">
     </div>
     <div class="lobster_details">
       <h3 class="name"><%= user.escape("name") %></h3>
       <div class="secondary_details skills">
         <ul class="no-bullets">
-          <li><%= user.get("skills")[0] %></li>
-          <li><%= user.get("skills")[1] %></li>
-          <li><%= user.get("skills")[2] %></li>
+          <li><%= user.get("skill") %></li>
         </ul>
       </div>
     </div>

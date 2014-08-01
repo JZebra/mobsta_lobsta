@@ -59,10 +59,18 @@ p, li, span{
   height: 50px;
 }
 
-.img-circle {
-  height: 108px;
-  width: 108px;
-  border: 2px solid $burgundy;
+.img-circle-sm {
+  height: 144px;
+  width: 144px;
+  border: 3px solid $burgundy;
+  border-radius: 50%;
+}
+
+.img-circle-md {
+  height: 225px;
+  width: 225px;
+  border: 3px solid $burgundy;
+  border-radius: 50%;
 }
 
 img.social{

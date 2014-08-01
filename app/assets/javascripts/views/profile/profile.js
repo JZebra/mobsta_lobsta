@@ -43,8 +43,8 @@ ML.Views.Profile = Backbone.CompositeView.extend({
       }
     );
     
-    this.$('#rates').html(this.skillsIndex.render().$el);
-    this.$('#rates').append(this.skillsForm.render().$el);
+    this.$('#skills').html(this.skillsIndex.render().$el);
+    this.$('#skills').append(this.skillsForm.render().$el);
   },
   
   render: function () {
@@ -52,7 +52,7 @@ ML.Views.Profile = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.renderSkills();
     this.renderPhoto();
-    this.renderMap(); //tried here
+    this.renderMap();
     return this;
   }
   

@@ -1,0 +1,20 @@
+//darkly colors
+$dblue: #3498db;
+$dgreen: #00bc8c;
+$dred: #e74c3c;
+$dyellow: #f39c12;
+$dgray: #464545;
+
+.tab-pane {
+//  margin-bottom: 10rem;
+//  position: absolute;
+//  height: 100%;
+  .categories-list {
+    h3 {
+      color: $dgreen;
+    }
+  }
+  .form-control {
+    padding: 1rem;
+  }
+}

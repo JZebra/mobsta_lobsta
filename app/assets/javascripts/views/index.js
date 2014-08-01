@@ -17,9 +17,22 @@ ML.Views.Index = Backbone.CompositeView.extend({
     var view = this;
     for (var i = 0; i < 15 && i < this.collection.length; i++) {
       var user = this.collection.models[i];
-      view.addCard("#position-" + i, user)
+      if (i < 3) {
+       view.addMdCard("#position-" + i, user)
+      } else {
+        view.addCard("#position-" + i, user)
+      }
+      //this is wasteful. Is there a better way?
     }
   },
+  
+  // enlargeTopThree: function () {
+  //   for (var i = 0; i < 3; i++) {
+  //     var image = $('#position-' + i).find('img')
+  //     image.removeClass(["img-circle-sm"])
+  //     image.addClass(["img-circle-md"])
+  //   }
+  // },
   
   // renderPanel: function (event) {
   //   event.preventDefault();
@@ -47,11 +60,17 @@ ML.Views.Index = Backbone.CompositeView.extend({
     this.addSubview(selector, cardView)
   },
   
+  addMdCard: function (selector, user) {
+    var cardView = new ML.Views.UserMdCard({ model: user })
+    this.addSubview(selector, cardView)
+  },
+  
   render: function () {
     var content = this.template({ users: this.collection });
     this.$el.html(content);
     this.renderPositions();
     this.attachSubviews();
+    // this.enlargeTopThree();
     return this;
   }
   
