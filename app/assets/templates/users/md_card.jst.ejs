@@ -1,32 +1,30 @@
-<div class="lobster_card col-lg-3" id="<%= user.escape('id')%>" >
+<div class="lobster_card" id="<%= user.escape('id')%>" >
   <!-- <a href="#user" ><span class="lobster_span"></span></a> -->
-  <div class="status"> <!-- whether the lobster is godlike or new -->
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="image-container">
-          <img src="<%= user.escape('img_md_url') %>" 
-          class="img-circle-md">
-        </div>
-        <div class="lobster_details col-12 col-lg-12">
-          <h2 class="name"><%= user.escape("name") %></h2>
-          <div class="secondary_details score col-12 col-lg-6">
-            <div class="rating">
-              <h4><%= user.escape("average_score") %>% Positive Rating</h4>
-                <p><%= user.escape("total_reviews") %> reviews </p>
-            </div>
-          </div>
-          <div class="secondary_details rate col-12 col-lg-6">
-            <h4>$<%= user.escape("rate") %>/hour</h4>
-            <p><%= user.escape("skill") %></p>
-          </div>
-        </div>
-        <a 
-          class="btn btn-primary"
-          href="#users/<%= user.escape('id') %>/hire">
-          Hire
-        </a>
-      </div>
+  <!-- add whether the lobster is godlike or new -->
+  <div class="img-row row">
+    <div class="image-container">
+      <img src="<%= user.escape('img_md_url') %>" 
+      class="img-circle-md">
     </div>
   </div>
+  <div class="name-row row">
+    <h3 class="name"><%= user.escape("name") %></h3>
+  </div>
+  <div class="details-row row">
+    <div class="details rating col-lg-6">
+      <p><%= user.escape("average_score") %>% Positive Rating</p>
+      <p><%= user.escape("total_reviews") %> reviews </p>
+    </div>
+    <div class="details rate col-lg-6">
+      <p>$<%= user.escape("rate") %>/hour</p>
+      <p><%= user.escape("skill") %></p>
+    </div>
+  </div>
+  <div class="button-row row">
+    <a 
+    class="btn btn-primary"
+    href="#users/<%= user.escape('id') %>/hire">
+    Hire
+  </a>
 </div>
-
+</div>

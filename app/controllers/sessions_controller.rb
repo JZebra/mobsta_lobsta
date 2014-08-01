@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
   
   def destroy
     sign_out!
-    render json: {}
+    redirect_to root_url
   end  
 end

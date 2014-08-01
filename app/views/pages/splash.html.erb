@@ -66,77 +66,80 @@
 
 <!--Start signup modal -->
 <div class="modal fade signup-modal" id="signup_modal">
-<div class="modal-dialog">
-<div class="modal-content text-center">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">
-      <span>&times;</span>
-    </button>
-    <h4 class="modal-title">Sign Up</h4>
-  </div>
-  <div class="modal-body">
-    <form action="/users" method="post">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-      <input type="hidden" name="user[phone1]" value="0123456789" >
-      <label>Name<br>
-        <input class='form-control' name="user[name]" type="text"><br>
-      </label><br>
-      <label>Email Address<br>
-        <input class='form-control' name="user[email]" type="text"><br>
-      </label><br>
-      <label>Password<br>
-        <input class='form-control' name="user[password]" type="password"><br>
-      </label><br>
-      <label>Zip Code<br>
-        <input class='form-control' name="user[zipcode]" type="text"><br>
-      </label><br>
-      <input 
-        type="submit" 
-        value="Create account" 
-        class="btn btn-primary"
-        id="new_user_signup">
-    </form>      
-  </div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <h4 class="modal-title">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+        <form action="/users" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <input type="hidden" name="user[phone1]" value="0123456789" >
+          <label for="name">Name</label>
+          <input class='form-control' name="user[name]" type="text" id="name">
+          <label for="email">Email Address</label>
+          <input class='form-control' name="user[email]" type="text" id="email">
+          <label for="password">Password</label>
+          <input class='form-control' name="user[password]" type="password" id="password">
+          <label for="zipcode">Zipcode</label>
+          <input class='form-control' name="user[zipcode]" type="text" id="zipcode">
+          <button 
+          type="submit"
+          class="btn btn-primary form-control"
+          id="new_user_signup">
+          Create account
+        </button>
+        </form>      
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 <!--End signup modal -->
 
 <!--Start login modal -->
 <div class="modal fade login-modal" id="login_modal">
-<div class="modal-dialog">
-<div class="modal-content text-center">
-  <div class="modal-header">
-    <button type="button" class="close" data-dismiss="modal">
-      <span>&times;</span>
-    </button>
-    <h4 class="modal-title">Log in</h4>
-  </div>
-  <div class="modal-body">
-    <form action="/session" method="post">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    </label><br>
-    <label>Email Address<br>
-      <input class='form-control' name="user[email]" type="text"><br>
-    </label><br>
-    <label>Password<br>
-      <input class='form-control' name="user[password]" type="password"><br>
-    </label><br>
-    <input 
-      type="submit" 
-      value="Log in" 
-      class="btn btn-primary"
-      id="user_login">
-  </form>      
-</div>
-<div class="modal-footer">
-  <a href='#'>Forgot password?</a>
-</div>
-</div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span>&times;</span>
+        </button>
+        <h4 class="modal-title">Log in</h4>
+      </div>
+      <div class="modal-body">
+        <form action="/session" method="post">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+          <label for="email">Email Address</label>
+          <input class='form-control' name="user[email]" type="text" id="email">
+          <label for="password">Password</label>
+          <input class='form-control' name="user[password]" type="password" id="password">
+          <button 
+          type="submit" 
+          class="btn btn-primary form-control"
+          id="user_login">
+          Log in
+          </button>
+        </form>      
+      </div>
+      <div class="modal-footer">
+        <a href='#'>Forgot password?</a>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
 <!--End modals -->
+<!--focus on inputs in modals -->
+<script>
+$('#signup-modal').on('shown.bs.modal', function () {
+    $('#name').focus();
+})
+$('#login-modal').on('shown.bs.modal', function () {
+    $('#email').focus();
+})
+</script>
 <!--Start error logs -->
 <% if flash[:errors] %>
 <div class="alert alert-warning alert-dismissible" role="alert">

@@ -73,6 +73,16 @@ section.why {
     background: $dgreen;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
+    margin-bottom: 2rem;
+  }
+  form {
+    input {
+      padding: 0rem 2rem 1rem;
+      margin-bottom: 3rem;
+    }
+    button {
+      margin-top: 2rem;
+    }
   }
 }
 
@@ -82,5 +92,14 @@ section.why {
     background: $dblue;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
+  }
+  form {
+    input {
+      padding: 0rem 2rem 1rem;
+      margin-bottom: 3rem;
+    }
+    button {
+      margin-top: 2rem;
+    }
   }
 }
