@@ -1,12 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 SF_ZIPS = %w(94121 94120 94115 94130 94103 94104 94105 94106 94132 94044 94133 94003 94965)
-
 NAMES = ("Bane, Boba Fett, Dr. Wily, Glados, Jabba the Hutt, Keyser Soze, Omar Little, Saruman, Sauron, Black Mage, Walter White, Lavos, Cthulhu, Darth Vader, Kefka, Gollum, Hans Gruber, Jim Moriarty, Joffrey Baratheon, Little Finger, Mr. Blonde, Mr. White").split(', ')
   
 # It would be cool to have movie/ famous quotes in the description
@@ -22,9 +14,12 @@ u8 = Category.create({ title: "Personal Security", description: "You have muscle
 u9 = Category.create({ title: "Kidnapping", description: "It's on like Donkey Kong." })
 u10 = Category.create({ title: "Fire and Brimstone", description: "Laying waste to the realms of Man." })
 u11 = Category.create({ title: "Other", description: "You're a jack of all trades and are open to creative offers." })
-
 # categories = %w(u0 u1 u2 u3 u4 u5 u6 u7 u8 u9 u10)
 
+# Create guest user
+guest = User.create({ name: "Guest", email: "guest@guest.com", password: "wootguest", zipcode: "94103", phone1: "4155559000" })
+
+# Fabricator stuff
 NAMES.each do |name|
   User.create({
     name: name,
