@@ -25,7 +25,6 @@ ML.Views.Photo = Backbone.View.extend({
   saveFile: function (event) {
     event.preventDefault();
     var view = this;
-    debugger;
     view.model.save({}, {
       success: function () {
         window.alert("Saved!");

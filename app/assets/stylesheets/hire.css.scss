@@ -1,0 +1,35 @@
+#hire-form {
+  .text-label {
+    font-size: 2rem;
+  }
+  
+  .text-label-sm {
+    font-size: 1.5rem;
+  }
+
+  .form-container {
+    background: rgba(#363636, 0.5);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 0rem 1rem 2rem;
+    margin: 2rem 0rem 0rem 0rem;
+  }
+  // form rows are too close to edges
+  .form-control {
+    margin: 0 2rem 2rem 0 ;
+  }
+
+  .hire-container {
+    margin: 3.5rem 0 0 0;
+  }
+
+  span {
+    //too bold
+    font-weight: 0;
+  }
+
+  .btn-success {
+    border: 1px solid black;
+  }
+  
+}

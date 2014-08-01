@@ -37,7 +37,7 @@ ML.Views.Profile = Backbone.CompositeView.extend({
     this.$el.html(content);
     this.renderSkills();
     this.renderPhoto();
-    this.renderMap();
+    this.renderMap(); //tried here
     return this;
   }
   

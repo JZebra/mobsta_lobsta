@@ -24,7 +24,7 @@
           Help with
           <span class="category-info-trigger contextual-help-trigger"></span>
         </div>
-        <select class="category-select">
+        <select class="category-select form-control">
           <option class="category-option" value="1">Assassination</option>
           <option class="category-option" value="2">Cleaning</option>
           <option class="category-option" value="3">Hatching Elaborate Plots</option>
@@ -37,7 +37,13 @@
       </span>
       <span class="postal-fields field-group">
         <div class="title">in</div>
-        <input id="postal-code" name="postal_code" pattern="[0-9]*" placeholder="zip code" type="text" value="94103" data-form-validator-id="form-validator-30">
+        <input 
+          class="form-control"
+          id="postal-code" 
+          name="postal_code" 
+          pattern="[0-9]*" 
+          placeholder="zip code" 
+          type="text">
       </span>
       <span class="white-separator"></span>
     </div>
@@ -45,221 +51,31 @@
       <div class="row row-thin">
         <div class="col-12 col-lg-7">
           <span class="date-fields datepicker-container field-group"><div class="datepicker" cid="7"><div class="title">on</div>
-            <input class="picker-trigger" id="date" name="date" readonly="readonly" type="text" value="any day" data-date="2014-07-26">
+            <input 
+              class="picker-trigger form-control" 
+              id="date" 
+              name="date" 
+              readonly="readonly" 
+              type="text" 
+              value="any day" 
+              data-date="2014-07-26">
             <i class="ss-icon ss-calendar picker-trigger"></i>
             <div class="datepicker-tooltip tooltip">
               <div class="anyday-container">
                 <div class="datepicker-selection datepicker-anyday">any day</div>
               </div>
-              <input id="date-hidden" min="2014-07-25" style="display:none;" type="date">
-              <div class="datepicker-widget" cid="9"><div class="date-picker-interior">
-
-                <table class="month">
-                  <thead>
-                    <tr>
-
-                      <td class="disabled">
-                        <i class="ss-icon ss-left"></i>
-                      </td>
-
-                      <td colspan="5">
-                        July, 2014
-                      </td>
-                      <td>
-                        <a class="date-ctxt-change" data-month="1" href="#" tabindex="-1">
-                          <i class="ss-icon ss-right"></i>
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-
-                      <td>Sun</td>
-
-                      <td>Mon</td>
-
-                      <td>Tue</td>
-
-                      <td>Wed</td>
-
-                      <td>Thu</td>
-
-                      <td>Fri</td>
-
-                      <td>Sat</td>
-
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    <tr>
-
-
-                      <td class="date disabled"></td>
-
-
-
-                      <td class="date disabled"></td>
-
-
-
-                      <td class="date disabled">1</td>
-
-
-
-                      <td class="date disabled">2</td>
-
-
-
-                      <td class="date disabled">3</td>
-
-
-
-                      <td class="date disabled">4</td>
-
-
-
-                      <td class="date disabled">5</td>
-
-
-                    </tr>
-
-                    <tr>
-
-
-                      <td class="date disabled">6</td>
-
-
-
-                      <td class="date disabled">7</td>
-
-
-
-                      <td class="date disabled">8</td>
-
-
-
-                      <td class="date disabled">9</td>
-
-
-
-                      <td class="date disabled">10</td>
-
-
-
-                      <td class="date disabled">11</td>
-
-
-
-                      <td class="date disabled">12</td>
-
-
-                    </tr>
-
-                    <tr>
-
-
-                      <td class="date disabled">13</td>
-
-
-
-                      <td class="date disabled">14</td>
-
-
-
-                      <td class="date disabled">15</td>
-
-
-
-                      <td class="date disabled">16</td>
-
-
-
-                      <td class="date disabled">17</td>
-
-
-
-                      <td class="date disabled">18</td>
-
-
-
-                      <td class="date disabled">19</td>
-
-
-                    </tr>
-
-                    <tr>
-
-
-                      <td class="date disabled">20</td>
-
-
-
-                      <td class="date disabled">21</td>
-
-
-
-                      <td class="date disabled">22</td>
-
-
-
-                      <td class="date disabled">23</td>
-
-
-
-                      <td class="date disabled">24</td>
-
-
-
-                      <td class="date enabled" data-date="2014-07-25">25</td>
-
-
-
-                      <td class="date enabled chosen" data-date="2014-07-26">26</td>
-
-
-                    </tr>
-
-                    <tr>
-
-
-                      <td class="date enabled" data-date="2014-07-27">27</td>
-
-
-
-                      <td class="date enabled" data-date="2014-07-28">28</td>
-
-
-
-                      <td class="date enabled" data-date="2014-07-29">29</td>
-
-
-
-                      <td class="date enabled" data-date="2014-07-30">30</td>
-
-
-
-                      <td class="date enabled" data-date="2014-07-31">31</td>
-
-
-
-                      <td class="date disabled"></td>
-
-
-
-                      <td class="date disabled"></td>
-
-
-                    </tr>
-
-                  </tbody>
-                </table>
-
-              </div>
+              <input 
+                class="form-control"
+                id="date-hidden" 
+                min="2014-07-25" 
+                style="display:none;" 
+                type="date">
+<!--datepicker goes here -->
             </div></div>
           </div></span>
           <span class="slot-fields field-group">
             <div class="title">within</div>
-            <select class="slot-select">
+            <select class="slot-select form-control">
 
               <option class="slot-option" value="anytime">anytime</option>
 
@@ -275,13 +91,16 @@
         <div class="col-12 col-lg-5">
           <div class="row row-thin">
             <div class="col-12 col-md-4 col-lg-5">
-              <span class="vehicle-requirement-fields field-group">
+              <span class="special-requirement-fields field-group">
                 <div class="title">needs</div>
-                <select class="vehicle-select">
+                <select class="special-select form-control">
                   <option value="">---</option>
-                  <option value="car">car</option>
-                  <option value="car_or_truck">vehicle</option>
-                  <option value="truck">truck</option>
+                  <option value="sm-arms">Small arms</option>
+                  <option value="a-arms">Assault weapons</option>
+                  <option value="explosives">Explosives</option>
+                  <option value="car">Car</option>
+                  <option value="truck">Truck</option>
+                  <option value="other">Other</option>
                 </select>
               </span>
               <span class="white-separator"></span>

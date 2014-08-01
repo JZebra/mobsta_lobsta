@@ -100,14 +100,23 @@
         <fieldset>
           <div class="row">
             <div class="location-show">
-              <span>Location</span>
+             <h3>Location</h3>
               <div class="input-container col-8">
-                <label class="text-label" for="street">Street Address</label>
-                <input class="location-input" id="street" name="address" type="text">
+                <label class="text-label-sm" for="street">Street Address</label>
+                <input 
+                  class="location-input form-control" 
+                  id="street" 
+                  name="address" 
+                  type="text">
               </div>
               <div class="input-container col-4">
-                <label class="text-label" for="postal-code">Zip Code</label>
-                <input class="location-input" id="zipcode" name="zipcode" pattern="[0-9]*" type="text">
+                <label class="text-label-sm" for="postal-code">Zip Code</label>
+                <input 
+                  class="location-input form-control" 
+                  id="zipcode" 
+                  name="zipcode" 
+                  pattern="[0-9]*" 
+                  type="text">
               </div>
             </div>
 
@@ -116,10 +125,10 @@
         <!--TR gives fieldsets the class 'toggle-area' -->
         <fieldset>
           <div class="row">
-            <p class="area-title">Description</p>
+            <span class="text-label">Description</span>
             <div class="input-container col-12">
               <label class="text-label" for="description"></label>
-              <textarea class="input" id="description" name="description" rows="5" cols="50"></textarea>
+              <textarea class="input form-control" id="description" name="description" rows="5" cols="50"></textarea>
             </div>
           </div>
         </fieldset>
@@ -127,12 +136,10 @@
           <div class="row">
             <div class="phone-edit">
               <i class="ss-dropdown ss-icon toggle-trigger" data-hide=".phone-edit" data-show=".phone-show"></i>
-              <p class="area-title blue margin-bottom">
-                <span>Add a cell phone number</span>
-              </p>
+                <h3>Add a cell phone number</h3>
               <p>We need your phone number so the lobster can get in touch with you.</p>
               <div class="input-container col-12">
-                <label class="text-label" for="phone">Phone number</label>
+                <label class="text-label-sm" for="phone">Phone number</label>
                 <i class="ss-phone input-icon ss-icon"></i>
                 <input 
                 type="text" 
@@ -149,14 +156,14 @@
             <div class="billing-show">
               <h3 class='area-title'>Billing</h3>
               <p>For the security of all parties, we only deal in Bitcoin.
-                We use Coinbase, which has state of the art security and privacy.
+                We use <a href="https://coinbase.com/">Coinbase</a>, which has state of the art security and privacy.
               </p>
             </div>
           </fieldset>
         </div>
       </div>
 
-      <div class="col-12 col-lg-3 hire-container centy">
+      <div class="col-12 col-lg-3 hire-container">
         <div class="top-section">
           <fieldset>
             <div class="row">
@@ -169,7 +176,7 @@
             </div>
           </fieldset>
         </div>
-        <div class="btm-section">
+        <div class="btn-section">
           <p class="happens-next">Here’s what happens next:</p>
           <ol>
             <li>When you click "Hire," we will send you an email invoice for the security deposit.</li>

@@ -51,14 +51,14 @@ ML.Views.Map = Backbone.View.extend({
 
     google.maps.event.addListener(marker, 'click', function() {
       marker.setMap(null);
-      for (var i = 0, I = this.markers.length; i < I && this.markers[i] != marker; ++i);
+      for (var i = 0, j = this.markers.length; i < j && this.markers[i] != marker; ++i);
       this.markers.splice(i, 1);
       this.path.removeAt(i);
       }.bind(this)
     );
 
     google.maps.event.addListener(marker, 'dragend', function() {
-      for (var i = 0, I = this.markers.length; i < I && this.markers[i] != marker; ++i);
+      for (var i = 0, j = this.markers.length; i < j && this.markers[i] != marker; ++i);
       this.path.setAt(i, marker.getPosition());
       }.bind(this)
     );
@@ -99,8 +99,8 @@ ML.Views.Map = Backbone.View.extend({
   },
   
   render: function () {
-    this.initializeMap();
-    this.initializePoly();
+    window.setTimeout(this.initializeMap(), 100); //tried here
+    window.setTimeout(this.initializePoly(), 200);
     var content = this.template({});
     this.$el.html(content);
     this.$('#map-container').prepend(this.$mapEl);
