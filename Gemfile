@@ -22,6 +22,8 @@ gem 'aws-sdk'
 
 group :production do
   gem 'rails_12factor'
+  gem 'fabrication'
+  gem 'faker'
 end
 
 group :development do

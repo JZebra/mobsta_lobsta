@@ -14,6 +14,7 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  cat_id      :integer
+#  phone       :string(15)
 #
 
 class Task < ActiveRecord::Base
