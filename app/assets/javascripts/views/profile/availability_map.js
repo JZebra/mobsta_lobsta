@@ -14,6 +14,7 @@ ML.Views.Map = Backbone.View.extend({
     if(this.mapInitialized){
       return;
     }
+    this.mapInitialized = true;
     //center is set to app academy ;)
     var center = new google.maps.LatLng(37.781014,-122.41142);
     
@@ -27,7 +28,7 @@ ML.Views.Map = Backbone.View.extend({
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
     this.initializePoly();
-    this.mapInitialized = true;
+    this.initializeMarkers();
   },
   
   initializePoly: function () {
@@ -41,16 +42,23 @@ ML.Views.Map = Backbone.View.extend({
     });
     google.maps.event.addListener(this.map, 'click', this.addPoint.bind(this));
   },
-
-
-  addPoint: function (event) {
-    this.path.insertAt(this.path.length, event.latLng);
+  
+  initializeMarkers: function(){
+    var that = this;
+    this.model.markers().each(function(marker){
+      that.addPoint({latLng: marker.latLng()});
+    })
+  },
+  
+  addPoint: function (params) {
+    this.path.insertAt(this.path.length, params.latLng);
 
     var marker = new google.maps.Marker({
-      position: event.latLng,
+      position: params.latLng,
       map: this.map,
       draggable: true
     });
+    
     this.markers.push(marker);
     marker.setTitle("#" + this.path.length);
 

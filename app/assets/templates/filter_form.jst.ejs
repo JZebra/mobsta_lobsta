@@ -1,21 +1,22 @@
-<form class="filter-form">
+<form class="filter-form container">
   <h1>Find a Lobster</h1>
   <div class="filters row row-thin">
-    <div class="col-12 col-lg-4">
+    <div class="col-12 col-lg-3">
       <span class="category-fields field-group">
         <div class="field-title">
           Help with
-          <span class="category-info-trigger contextual-help-trigger"></span>
         </div>
         <select class="category-select form-control">
           <% categories.each( function (category) { %>
             <option 
-              value="<%= category.escape("id") %>">
-              <%= category.escape('title') %>
+            value="<%= category.escape("id") %>">
+            <%= category.escape('title') %>
           </option>
           <% }) %>
         </select>
       </span>
+    </div>
+    <div class="col-12 col-lg-2">
       <span class="postal-fields field-group">
         <div class="title">in</div>
         <input 
@@ -26,18 +27,18 @@
         placeholder="zip code" 
         type="text">
       </span>
-      <span class="white-separator"></span>
+      <!-- <span class="white-separator">|</span> -->
     </div>
-    <div class="col-12 col-lg-8">
-      <div class="row row-thin">
-        <div class="col-12 col-lg-7">
-          <input 
-          data-provide="datepicker" 
-          class="datepicker" 
-          data-date-format="mm/dd/yyyy">
-          <span class="glyphicon glyphicon-calendar"></span>
-        </div>
-      </div>
+    <div class="col-12 col-lg-2">
+      <span class="calendar-fields field-group">
+        <div class="field-title">on</div>
+        <input 
+        data-provide="datepicker" 
+        class="datepicker" 
+        data-date-format="mm/dd/yyyy">
+      </span>
+    </div>
+    <div class="col-12 col-lg-2">
       <span class="time-fields field-group">
         <div class="title">within</div>
         <select class="time-select form-control">
@@ -49,31 +50,28 @@
         </select>
       </span>
     </div>
-    <div class="col-12 col-lg-5">
-      <div class="row row-thin">
-        <div class="col-12 col-md-4 col-lg-5">
-          <span class="special-requirement-fields field-group">
-            <div class="title">needs</div>
-            <select class="special-select form-control">
-              <option value="">---</option>
-              <option value="sm-arms">Small arms</option>
-              <option value="a-arms">Assault weapons</option>
-              <option value="explosives">Explosives</option>
-              <option value="car">Car</option>
-              <option value="truck">Truck</option>
-              <option value="other">Other</option>
-            </select>
-          </span>
-          <span class="white-separator"></span>
-        </div>
-        <div class="col-12 col-md-8 col-lg-7">
-          <button class="btn btn-tertiary btn-search" name="commit" type="submit">
-            Find
-          </button>
-        </div>
-      </div>
+    <div class="col-12 col-lg-2 col-md-4">
+      <span class="special-requirement-fields field-group">
+        <div class="title">needs</div>
+        <select class="special-select form-control">
+          <option value="">---</option>
+          <option value="sm-arms">Small arms</option>
+          <option value="a-arms">Assault weapons</option>
+          <option value="explosives">Explosives</option>
+          <option value="car">Car</option>
+          <option value="truck">Truck</option>
+          <option value="ninja">Ninja skillzz</option>
+          <option value="other">Other</option>
+        </select>
+      </span>
+      <!-- <span class="white-separator">|</span> -->
+    </div>
+    <div class="col-12 col-lg-1 col-md-8">
+      <input 
+        class="btn btn-success btn-search" 
+        name="commit" 
+        type="submit"
+        value="Find">
     </div>
   </div>
-</div>
-</div>
 </form>

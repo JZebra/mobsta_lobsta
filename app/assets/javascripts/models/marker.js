@@ -3,16 +3,8 @@ ML.Models.Marker = Backbone.Model.extend({
     return 'api/availabilities/' + this.get('availability_id') + '/availability_markers'
   },
   
-  lat: function () {
-    return this.get("lat")
-  },
-  
-  lng: function () {
-    return this.get("lng")
-  },
-  
   latLng: function () {
-    return (this.lat(), this.lng())
+    return new google.maps.LatLng(this.get('lat'), this.get('lng'));
   }
   
 });
