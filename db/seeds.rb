@@ -23,7 +23,7 @@ guest = User.create({ name: "Guest", email: "guest@guest.com", password: "wootgu
 NAMES.each do |name|
   User.create({
     name: name,
-    email: Faker::Internet.email,
+    email: name.delete(' ') + "@gmail.com",
     password: "testtest",
     zipcode: SF_ZIPS.sample,
     phone1: Faker::Number.number(10)
