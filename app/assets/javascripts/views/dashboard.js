@@ -19,7 +19,12 @@ ML.Views.Dashboard = Backbone.CompositeView.extend({
   
   addCard: function (user, counter) {
     var cardView = new ML.Views.DashCard({ model: user })
-    this.addSubview(".position-" + counter, cardView)
+    var selector = ".position-" + counter
+    //there's probably a better way
+    if (this.subviews(selector)[0]) {
+      this.removeSubview(selector, this.subviews(selector)[0]); 
+    }
+    this.addSubview(selector, cardView);
   },
   
   render: function () {

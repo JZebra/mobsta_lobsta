@@ -9,7 +9,6 @@ ML.Views.Index = Backbone.CompositeView.extend({
   
   events: {
     // "click .lobster_card" : "renderPanel",
-    "click .btn-see-more" : "renderRemainder",
     "click #see-more"     : "showRemainder"
   },
   
@@ -57,12 +56,18 @@ ML.Views.Index = Backbone.CompositeView.extend({
   
   addCard: function (selector, user) {
     var cardView = new ML.Views.UserCard({ model: user })
-    this.addSubview(selector, cardView)
+    if (this.subviews(selector)[0]) {
+      this.removeSubview(selector, this.subviews(selector)[0]); 
+    }
+    this.addSubview(selector, cardView);
   },
   
   addMdCard: function (selector, user) {
     var cardView = new ML.Views.UserMdCard({ model: user })
-    this.addSubview(selector, cardView)
+    if (this.subviews(selector)[0]) {
+      this.removeSubview(selector, this.subviews(selector)[0]); 
+    }
+    this.addSubview(selector, cardView);
   },
   
   render: function () {
@@ -73,6 +78,4 @@ ML.Views.Index = Backbone.CompositeView.extend({
     // this.enlargeTopThree();
     return this;
   }
-  
-  
 });
