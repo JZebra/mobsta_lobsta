@@ -1,4 +1,4 @@
-<div class="lobster_card container" id="<%= user.escape('id')%>" >
+<div class="lobster-card" id="<%= user.escape('id')%>" >
   <!-- <a href="#user" ><span class="lobster_span"></span></a> -->
   <!-- add whether the lobster is godlike or new -->
   <div class="img-row row">
@@ -7,16 +7,16 @@
       class="img-circle-sm">
     </div>
   </div>
-  <div class="name-row row col-12">
+  <div class="name-row row">
     <h3 class="name"><%= user.escape("name") %></h3>
   </div>
-  <div class="details-row col-12">
+  <div class="details-row row">
     <div class="details rating col-lg-6">
-      <h4><%= user.escape("average_score") %>% Positive Rating</h4>
+      <p><%= user.escape("average_score") %>% Positive Rating</p>
       <p><%= user.escape("total_reviews") %> reviews </p>
     </div>
     <div class="details rate col-lg-6">
-      <h4>$<%= user.escape("rate") %>/hour</h4>
+      <p>$<%= user.escape("rate") %>/hour</p>
       <p><%= user.escape("skill") %></p>
     </div>
   </div>
@@ -28,6 +28,3 @@
   </a>
 </div>
 </div>
-
-
-

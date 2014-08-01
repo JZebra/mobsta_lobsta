@@ -1,4 +1,4 @@
-<div class="lobster_card" id="<%= user.escape('id')%>" >
+<div class="lobster-card dash-card" id="<%= user.escape('id')%>" >
   <!-- <a href="#user" ><span class="lobster_span"></span></a> -->
   <div class="status"> <!-- whether the lobster is godlike or new -->
 
@@ -13,5 +13,12 @@
         </ul>
       </div>
     </div>
+    <div class="button-row row">
+      <a 
+      class="btn btn-primary"
+      href="#users/<%= user.escape('id') %>/hire">
+      Hire
+    </a>
   </div>
+</div>
 </div>
