@@ -7,22 +7,27 @@ ML.Views.Map = Backbone.View.extend({
   
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    this.mapInitialized = false;
   },
   
   initializeMap: function () {
+    if(this.mapInitialized){
+      return;
+    }
     //center is set to app academy ;)
     var center = new google.maps.LatLng(37.781014,-122.41142);
     
     this.markers = [];
     this.path = new google.maps.MVCArray;
 
-    this.$mapEl = $('<div>');
-    this.$mapEl.addClass('map');
+    this.$mapEl = this.$('.map');
     this.map = new google.maps.Map(this.$mapEl[0], {
       zoom: 12,
       center: center,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+    this.initializePoly();
+    this.mapInitialized = true;
   },
   
   initializePoly: function () {
@@ -99,11 +104,11 @@ ML.Views.Map = Backbone.View.extend({
   },
   
   render: function () {
-    window.setTimeout(this.initializeMap(), 100); //tried here
-    window.setTimeout(this.initializePoly(), 200);
+
+    // debugger;
     var content = this.template({});
     this.$el.html(content);
-    this.$('#map-container').prepend(this.$mapEl);
+    
     return this;
   }
 });

@@ -11,3 +11,5 @@ ML.Collections.Markers = Backbone.Collection.extend({
     }
   }
 })
+
+ML.Collections.markers = new ML.Collections.Markers([], {});
