@@ -20,10 +20,10 @@ gem 'paperclip'
 gem 'figaro'
 gem 'aws-sdk'
 gem 'fabrication'
+gem 'faker'
 
 group :production do
   gem 'rails_12factor'
-  gem 'faker'
 end
 
 group :development do
@@ -32,5 +32,4 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'debugger'
-  gem 'faker'
 end
