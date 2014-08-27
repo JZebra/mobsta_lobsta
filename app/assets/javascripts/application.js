@@ -17,5 +17,11 @@
 //= require backbone
 //= require bootstrap-sprockets
 //= require mobstrlobstr
-
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./utils
+//= require_tree ./views
+//= require_tree ./routers
+//= require_tree .
 
