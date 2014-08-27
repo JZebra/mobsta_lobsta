@@ -22,9 +22,10 @@ $burgundy: #59121A;
 $red: #8C1A15;
 $green: #0C3A2D;
 $white: #FFFFFF;
-$black: #010101;
 $gray: #181B22;
 $lightblue: #1194D4;
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
 
 //darkly colors
 $dblue: #3498db;
@@ -36,26 +37,26 @@ $dyellow: #f39c12;
 #main {
   background-color: #95a5a6;
   padding-top: 60px;
-  background-image: url(https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/backgrounds/boat.jpg);
-  background-size: cover;
+  background-color: lightgrey;
+//  background-image: url(https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/backgrounds/boat.jpg);
+  background-size: 100%;
 }
 
 .row {
   padding: 1rem;
 }
 
-h1, h2, h3, h4, h5, h6{
-//  font-family: 'Montserrat', sans-serif;
+h1, h2, h3, h4, h5, h6 {
   font-family: 'PT Sans', sans-serif;
-  color: #ecf0f1;
+  color: black;
 }
 
-p, li, span{
+p, li, span {
   font-family: 'PT Sans', sans-serif;
-  color: #ecf0f1;
+  color: black;
 }
 
-.icon{
+.icon {
   height: 50px;
 }
 
@@ -73,23 +74,27 @@ p, li, span{
   border-radius: 50%;
 }
 
-img.social{
+img.social {
   height: 24px;
   width: 24px;
 }
 
-ul.no-bullets{
-list-style-type: none;
+ul.no-bullets {
+  list-style-type: none;
+}
+
+ul {
+  padding: 0;
 }
 
 .btn {
-  color: #ecf0f1;
+  color: black;
 }
 
-.btn-default{
-//  color: $burgundy;
-  border-color: black;
-background-color: $burgundy;
+.btn-default {
+//  border-color: black;
+  color: $clouds;
+  background-color: $burgundy;
 }
 
 .map {
@@ -97,12 +102,12 @@ background-color: $burgundy;
   margin: 15px;
 }
 
-#map-container{
+#map-container {
   margin: 10px;
   padding: 5px;
 }
 
-.footer-container{
+.footer-container {
   margin-top: 30px;
 }
 
