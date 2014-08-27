@@ -5,15 +5,44 @@ $dred: #e74c3c;
 $dyellow: #f39c12;
 $dgray: #464545;
 
-.tab-pane {
-//  position: absolute;
-//  height: 100%;
-  .categories-list {
-    h3 {
-      color: $dgreen;
+.profile {
+  height: 1050px;
+  .tabs {
+    padding-right: 0;
+    background: $dgray;
+    height: 1050px;
+    .categories-list {
+      li {
+        margin-top: 1em;
+      }
+    }
+    .form-control {
+      padding: 1rem;
     }
   }
-  .form-control {
-    padding: 1rem;
+  .panes {
+    background: lightgrey;
+    ul.categories-list {
+      padding-top: 10px;
+      li {
+        margin-bottom: 1em;
+        i {
+          padding-left: 1em;
+        }
+      }
+    }
+    #map-container {
+      .map {
+        height: 600px;
+      }
+      .btn {
+        margin-top: 1em;
+      }
+    }
+    #photo-form {
+      .btn {
+        margin-top: 1em;
+      }
+    }
   }
 }

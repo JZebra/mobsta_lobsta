@@ -35,11 +35,8 @@ $dyellow: #f39c12;
 
 
 #main {
-  background-color: #95a5a6;
   padding-top: 60px;
   background-color: lightgrey;
-//  background-image: url(https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/backgrounds/boat.jpg);
-  background-size: 100%;
 }
 
 .row {
@@ -95,16 +92,6 @@ ul {
 //  border-color: black;
   color: $clouds;
   background-color: $burgundy;
-}
-
-.map {
-  height: 600px;
-  margin: 15px;
-}
-
-#map-container {
-  margin: 10px;
-  padding: 5px;
 }
 
 .footer-container {
