@@ -1,5 +1,5 @@
 SF_ZIPS = %w(94121 94120 94115 94130 94103 94104 94105 94106 94132 94044 94133 94003 94965)
-NAMES = ("Avon Barksdale, Bane, Boba Fett, Jabba the Hutt, Omar Little, Saruman, Sauron, Black Mage, Walter White, Cthulhu, Darth Vader, Kefka, Gollum, Hans Gruber, Jim Moriarty, Joffrey Baratheon, Little Finger, Mr. Blonde, Mr. White").split(', ')
+NAMES = ("Bane, Boba Fett, Dr. Wily, Glados, Jabba the Hutt, Keyser Soze, Omar Little, Saruman, Sauron, Black Mage, Walter White, Lavos, Cthulhu, Darth Vader, Kefka, Gollum, Hans Gruber, Jim Moriarty, Joffrey Baratheon, Little Finger, Mr. Blonde, Mr. White").split(', ')
   
 # It would be cool to have movie/ famous quotes in the description
 u0 = Category.create({ title: "Fake Credentials", description: "Creating fake drivers licenses, diplomas, and passports."})
@@ -24,7 +24,7 @@ NAMES.each do |name|
   User.create({
     name: name,
     email: name.delete(' ') + "@gmail.com",
-    password: "testing",
+    password: "testtest",
     zipcode: SF_ZIPS.sample,
     phone1: Faker::Number.number(10)
   })
