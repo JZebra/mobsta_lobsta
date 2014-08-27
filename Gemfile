@@ -19,10 +19,10 @@ gem 'jquery-ui-rails'
 gem 'paperclip'
 gem 'figaro'
 gem 'aws-sdk'
+gem 'fabrication'
 
 group :production do
   gem 'rails_12factor'
-  gem 'fabrication'
   gem 'faker'
 end
 
@@ -32,6 +32,5 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'debugger'
-  gem 'fabrication'
   gem 'faker'
 end

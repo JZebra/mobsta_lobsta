@@ -6,7 +6,7 @@ window.ML = {
   Utils: {},
   initialize: function() {
     new ML.Routers.AppRouter({
-      $rootEl: $('#main')
+      $rootEl: $('#main');
     });
     Backbone.history.start();
   }
