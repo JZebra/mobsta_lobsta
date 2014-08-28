@@ -4,13 +4,14 @@ $dgreen: #00bc8c;
 $dred: #e74c3c;
 $dyellow: #f39c12;
 $dgray: #464545;
+$clouds: #ecf0f1;
 
 .profile {
-  height: 1050px;
+  height: 1100px;
   .tabs {
     padding-right: 0;
     background: $dgray;
-    height: 1050px;
+    height: 1100px;
     .categories-list {
       li {
         margin-top: 1em;
@@ -21,7 +22,7 @@ $dgray: #464545;
     }
   }
   .panes {
-    background: lightgrey;
+
     ul.categories-list {
       padding-top: 10px;
       li {

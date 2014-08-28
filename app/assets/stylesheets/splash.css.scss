@@ -4,6 +4,8 @@ $dblue: #3498db;
 $dgreen: #00bc8c;
 $dred: #e74c3c;
 $dyellow: #f39c12;
+$clouds: #ecf0f1;
+$silver: #bdc3c7;
 
 .top {
   background-image: url(https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/backgrounds/traps_sun.jpg);
@@ -27,7 +29,7 @@ $dyellow: #f39c12;
     border-radius: 5px;
     padding: 10px;
     .btn, .btn-lg {
-      border: 1px solid $burgundy;
+      border: 1px thin solid $burgundy;
     }
     .guest {
       margin-top: 10rem;
@@ -41,6 +43,7 @@ html, body, section {
 
 section.why {
   padding: 5% 0% 0%;
+  color: $clouds;
   h1 {
     font-size: 6rem;
   }

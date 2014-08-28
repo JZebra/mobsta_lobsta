@@ -1,10 +1,16 @@
+//darkly colors
+$dblue: #3498db;
+$dgreen: #00bc8c;
+$dred: #e74c3c;
+$dyellow: #f39c12;
+
 $burgundy: #59121A;
 $navbarblue: #345B7F;
 $lightblue: #1194D4;
 $clouds: #ecf0f1;
 
 .popular-job {
-  background: rgba(#363636, 0.5);
+  background: rgba($clouds, 0.2);
   border-radius: 2px;
   .ul {
     padding-left: 0px;
@@ -17,7 +23,7 @@ $clouds: #ecf0f1;
 }
 
 .sidebar-form {
-  background: rgba(#363636, 0.5);
+  background: rgba($clouds, 0.2);
   border-radius: 5px;
   padding: 0rem 2rem 2rem;
   margin: 2rem 2rem 2rem 0rem;
@@ -52,11 +58,10 @@ $clouds: #ecf0f1;
 }
 
 .greatest-hits-section {
-  background: rgba(#363636, 0.5);
+  background: rgba($clouds, 0.2);
   border-radius: 4px;
   margin: 2rem 2rem 2rem 0rem;
   h3 {
-    color: $clouds;
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
     background-color: #2c3e50;

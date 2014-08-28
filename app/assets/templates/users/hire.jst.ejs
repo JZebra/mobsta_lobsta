@@ -2,9 +2,11 @@
   <form class="top-aligned" id="hire-form">
     <div class="row">
       <div class="col-lg-3 lobster-info-container">
-        <div class="lobster-avatar">
-          <div class="avatar-container avatar-container-180 shadow">
-            <img class="lobster-md" src="<%= user.get('image_md_url') %>">
+        <div class="lobster-image">
+          <div class="image-container">
+            <img 
+            class="img-circle-md" 
+            src="<%= user.escape('img_md_url') %>">
           </div>
         </div>
         <h1 class="lobster-name"><%= user.escape('name') %></h1>
@@ -39,7 +41,7 @@
                 <label class="text-label" for="title">Category</label>
                 <select class="category-select form-control" id="cat_id" name="cat_id">
                   <option class="category-option">
-                    Whaddaya need done?
+                    What do you need done?
                   </option>
                   <% _(user.get('categories')).each(function (category) { %>
                     <option class="category-option" value="<%= category.id %>">
