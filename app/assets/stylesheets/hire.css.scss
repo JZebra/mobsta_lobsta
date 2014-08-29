@@ -2,10 +2,7 @@ $clouds: #ecf0f1;
 
 #hire-form {
   .text-label {
-    font-size: 2rem;
-  }
-  .text-label-sm {
-    font-size: 1.5rem;
+    font-size: 2em;
   }
   .lobster-info-container{
     margin-top: 2em;
@@ -17,13 +14,9 @@ $clouds: #ecf0f1;
     margin-top: 1em;
   }
   .form-control {
-    margin: 0 2rem 2rem 0 ;
+    margin: 0 2em 2em 0 ;
   }
-
   .hire-container {
     margin-top: 2em;
-  }
-  .btn-success {
-    border: 1px solid black;
   }
 }

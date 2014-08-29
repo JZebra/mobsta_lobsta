@@ -18,9 +18,6 @@ ML.Views.HireForm = Backbone.View.extend({
       wait: true,
       success: function () {
         window.alert("The lobster has been notified. Expect to be contacted in the next 30 minutes.")
-      },
-      error: function () {
-        console.log('wtf?')
       }
     });
   },
