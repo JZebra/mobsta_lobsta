@@ -1,5 +1,5 @@
 SF_ZIPS = %w(94121 94120 94115 94130 94103 94104 94105 94106 94132 94044 94133 94003 94965)
-NAMES = ("Bane, Boba Fett, Dr. Wily, Glados, Jabba the Hutt, Keyser Soze, Omar Little, Saruman, Sauron, Black Mage, Walter White, Lavos, Cthulhu, Darth Vader, Kefka, Gollum, Hans Gruber, Jim Moriarty, Joffrey Baratheon, Little Finger, Mr. Blonde, Mr. White").split(', ')
+NAMES = ("Bane, Boba Fett, Glados, Jabba the Hutt, Omar Little, Saruman, Sauron, Black Mage, Walter White, Cthulhu, Darth Vader, Kefka, Gollum, Hans Gruber, Jim Moriarty, Joffrey Baratheon, Little Finger, Han Solo").split(', ')
   
 # It would be cool to have movie/ famous quotes in the description
 u0 = Category.create({ title: "Fake Credentials", description: "Creating fake drivers licenses, diplomas, and passports."})
@@ -9,7 +9,7 @@ u3 = Category.create({ title: "Arson", description: "Some people just want to wa
 u4 = Category.create({ title: "Assassination", description: "Channel your inner ninja."})
 u5 = Category.create({ title: "Cleaning", description: "The art of making a big mess then making it go away."})
 u6 = Category.create({ title: "Hatching Elaborate Plots", description: "You're clever. You can come up with something even better than the script for Inside Man." })
-u7 = Category.create({ title: "Delivery/Pickup", description: "You can get it from point A to point B quickly, securely, discreetly." })
+u7 = Category.create({ title: "Delivery/Pickup", description: "You can get it from point A to point B quickly, securely, and discreetly." })
 u8 = Category.create({ title: "Personal Security", description: "You have muscles and know how to use them." })
 u9 = Category.create({ title: "Kidnapping", description: "It's on like Donkey Kong." })
 u10 = Category.create({ title: "Fire and Brimstone", description: "Laying waste to the realms of Man." })
@@ -24,7 +24,7 @@ NAMES.each do |name|
   User.create({
     name: name,
     email: name.delete(' ') + "@gmail.com",
-    password: "testtest",
+    password: "testing",
     zipcode: SF_ZIPS.sample,
     phone1: Faker::Number.number(10)
   })
