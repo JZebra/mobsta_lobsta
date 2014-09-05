@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
     
     if @user 
       sign_in!(@user)
-      # render json: @user
       redirect_to root_url
     else
-      render json: ["Invalid email or password"], status: :unprocessable_entity
+      flash[:errors] = ["Invalid email or password"]
+      redirect_to splash_url
     end
   end
   

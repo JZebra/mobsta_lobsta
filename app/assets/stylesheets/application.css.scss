@@ -33,6 +33,11 @@ $dgreen: #00bc8c;
 $dred: #e74c3c;
 $dyellow: #f39c12;
 
+.header {
+  .alert {
+    margin-bottom: 0;
+  }
+}
 
 #main {
   padding-top: 60px;
@@ -40,6 +45,13 @@ $dyellow: #f39c12;
 
 .row {
   padding: 1rem;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -50,6 +62,9 @@ h1, h2, h3, h4, h5, h6 {
 p, li, span {
   font-family: 'PT Sans', sans-serif;
   color: whitesmoke;
+  .small {
+    font-size: .8rem;
+  }
 }
 
 .icon {

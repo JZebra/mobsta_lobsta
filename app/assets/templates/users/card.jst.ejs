@@ -11,11 +11,11 @@
   <div class="details-row row">
     <div class="details rating col-lg-6">
       <p><%= user.escape("average_score") %>% Positive Rating</p>
-      <p><%= user.escape("total_reviews") %> reviews </p>
+      <p class='small'><%= user.escape("total_reviews") %> reviews </p>
     </div>
     <div class="details rate col-lg-6">
       <p>$<%= user.escape("rate") %>/hour</p>
-      <p><%= user.escape("skill") %></p>
+      <p class='small'><%= user.escape("skill") %></p>
     </div>
   </div>
   <div class="button-row row">

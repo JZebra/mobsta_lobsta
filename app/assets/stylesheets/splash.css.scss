@@ -7,6 +7,11 @@ $dyellow: #f39c12;
 $clouds: #ecf0f1;
 $silver: #bdc3c7;
 
+.alert {
+  margin-bottom: 0;
+  margin-top: 60px;
+  z-index: 10;
+}
 .top {
   background-image: url(https://s3-us-west-1.amazonaws.com/mobstrlobstr-development/backgrounds/traps_sun.jpg);
   background-size: 2090px 1385px;
@@ -16,6 +21,7 @@ $silver: #bdc3c7;
     border: 2px solid $burgundy;
     border-radius: 4px;
 
+//centering buttons on page
     position: absolute;
     top: 50%;
     margin-top: -150px;

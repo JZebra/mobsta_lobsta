@@ -22,12 +22,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in!(@user)
-      # render json: @user
       redirect_to root_url
     else
-      # render json: @user.errors.full_messages, status: :unprocessable_entity
-      flash.now[:errors] = @user.errors.full_messages
-      render :new
+      flash[:errors] = @user.errors.full_messages
+      redirect_to splash_url
     end
   end
   
