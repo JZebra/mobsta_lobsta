@@ -21,7 +21,6 @@
 class User < ActiveRecord::Base
   validates :name, :email, :phone1, :token, :password_digest, presence: true
   validates :email, uniqueness: true, format: { with: /\A\S+@.+\.\S+\z/ }
-  validates :password, length: { minimum: 6, message: 'Password must be at least 6 characters long.' }
   validates :zipcode, length: { minimum: 5 }, numericality: { only_integer: true }
   
   has_many(:posted_tasks, class_name: "Task", foreign_key: :poster_id)
